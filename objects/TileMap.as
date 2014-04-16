@@ -8,11 +8,13 @@
 	import extensions.TMXTileMap;
 	import extensions.TMXTileSheet;
 	
-	public class TileMap extends Sprite {
+	public class TileMap extends BaseObject {
 
 		var TMX:TMXTileMap = null;
 		
-		public function TileMap(url:String) {
+		public function TileMap(game:Game, url:String) {
+			super(game);
+
 			// Load Tile Map from TMX File
 			TMX = new TMXTileMap();
 			TMX.addEventListener(Event.COMPLETE, drawLayers);
@@ -27,6 +29,11 @@
 				addChild(TMX.layers()[i].getHolder());
 		   }
 
+		}
+		
+		override public function update(event:Event):void { 
+			if (this.game.keys[Game.KEY_LEFT]) { trace("left"); }
+			
 		}
 		
 	}

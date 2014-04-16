@@ -1,9 +1,12 @@
-﻿package  {
+﻿package scenes {
 	
-	public class SplashScene {
+	import starling.display.Sprite;
+	import starling.events.Event;
+	
+	public class SplashScene extends Scene {
 
-		public function SplashScene() {
-			// constructor code
+		public function SplashScene(game:Game) {
+			super(game);
 		}
 
 	}

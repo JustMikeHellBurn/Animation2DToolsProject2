@@ -1,9 +1,9 @@
-﻿package  {
+﻿package scenes  {
 	
-	public class MenuScene {
+	public class GameOverScene extends Scene {
 
-		public function MenuScene() {
-			// constructor code
+		public function GameOverScene(game:Game) {
+			super(game);
 		}
 
 	}

@@ -1,11 +1,21 @@
-﻿package  {
+﻿package scenes  {
 	
-	public class Scene {
+	import objects.BaseObject;
+	
+	import starling.events.Event;
+	
+	public class Scene extends BaseObject {
 
-		public function Scene() {
-			// constructor code
+		public function Scene(game:Game) {
+			super(game);
 		}
+		
+		override public function update(event:Event):void {
+			trace(this.game.keys);
+		}
+		
 
+		
 	}
 	
 }
