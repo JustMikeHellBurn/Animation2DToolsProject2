@@ -32,8 +32,7 @@
 		}
 		
 		override public function update(event:Event):void { 
-			if (this.game.keys[Game.KEY_LEFT]) { trace("left"); }
-			
+
 		}
 		
 	}

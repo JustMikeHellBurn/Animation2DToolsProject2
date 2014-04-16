@@ -11,7 +11,7 @@
 		}
 		
 		override public function update(event:Event):void {
-			trace(this.game.keys);
+
 		}
 		
 
