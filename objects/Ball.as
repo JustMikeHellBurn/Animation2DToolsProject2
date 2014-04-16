@@ -1,11 +1,20 @@
 ﻿package objects {
 	
-	public class Ball {
+	public class Ball extends BaseObject {
 
-		public function Ball() {
-			// constructor code
+		import starling.events.Event;
+		
+		public function Ball(game:Game) {
+			super(game);
+			//this.spriteClip = 
 		}
 
+		override public function update(event:Event):void {
+			// Make the ball fall
+			this.dy += 1;
+			this.y += this.dy;
+		}
+		
 	}
 	
 }

@@ -96,6 +96,8 @@
 			tileMap = new TileMap(this, "assets/maps/test.tmx");
 			addChild(tileMap);
 			
+			ball = new Ball(this);
+			
 		}
 
 		public function update(event:Event):void {
