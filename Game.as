@@ -5,9 +5,11 @@ package
 {
 	import starling.display.Sprite;
 	import starling.events.Event;
-
+	import extensions.*;
+	
 	public class Game extends Sprite
 	{
+		var TMX:TMXTileMap;
 		
 		public function Game()
 		{
@@ -20,6 +22,13 @@ package
 
 		private function init(event:Event):void
 		{
+			
+			trace("SDF");
+			TMX = new TMXTileMap();
+			TMX.addEventListener(Event.COMPLETE, drawLayers);
+			 
+			TMX.load("test.tmx");
+			 
 
 
 		}
@@ -29,6 +38,16 @@ package
 
 		}
 
+		private function drawLayers(event:Event):void
+		{
+			
+		   for(var i:int = 0; i < TMX.layers().length; i++)
+		   {
+			addChild(TMX.layers()[i].getHolder());
+		   }
+
+		}
+	
 	}
 
 }
