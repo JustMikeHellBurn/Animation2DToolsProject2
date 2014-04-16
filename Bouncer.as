@@ -5,14 +5,14 @@ package
 	import flash.display.Sprite;
 	import starling.core.Starling;
 	
-	[SWF(width=640, height=480, frameRate=60, backgroundColor=0x0000FF)]
+	[SWF(width=800, height=600, frameRate=60, backgroundColor=0x0000FF)]
 	public class Bouncer extends Sprite {
 		
 		// create a class variable that is associated with Starling
 		private var starling:Starling;
 		
 		public function Bouncer() {
-				
+
 			// create our Starling instance
 			starling = new Starling(Game, stage);
 			
