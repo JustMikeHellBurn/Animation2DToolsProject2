@@ -8,6 +8,7 @@
 	import scenes.*;
 	
 	import objects.Ball;
+	import objects.SplashImage;
 	
 	import flash.events.MouseEvent;
 	import flash.events.KeyboardEvent;
@@ -31,13 +32,12 @@
 		// ==================================
 		public var keys:Array;
 		
-		protected var themeChannel:SoundChannel;
-		
 		// ==================================
 		// Game Objects
 		// ==================================
 		public var ball:Ball;
 		public var tileMap:TileMap;
+		public var splashImage:SplashImage;
 		
 		// ==================================
 		// Game Variables (Score/Life/etc)
@@ -55,12 +55,12 @@
 		// ==================================
 		// Game Scenes
 		// ==================================
-		private var splashScene:SplashScene;
-		private var instructionScene:InstructionScene;
-		private var menuScene:MenuScene;
-		private var playScene:PlayScene;
-		private var gameOverScene:GameOverScene;
-		private var liveScene:Scene;
+		public var splashScene:SplashScene;
+		public var instructionScene:InstructionScene;
+		public var menuScene:MenuScene;
+		public var playScene:PlayScene;
+		public var gameOverScene:GameOverScene;
+		public var liveScene:Scene;
 		
 		public function Game()
 		{
@@ -90,6 +90,14 @@
 
 		private function init(event:Event):void
 		{
+			// Intialize Game Objects
+			tileMap = new TileMap(this, "assets/maps/test3.tmx");
+			
+			ball = new Ball(this);
+			
+			
+			splashImage = new SplashImage(this);
+			
 			// Initialize Scenes
 			splashScene = new SplashScene(this);
 			instructionScene = new InstructionScene(this);
@@ -97,25 +105,14 @@
 			playScene = new PlayScene(this);
 			gameOverScene = new GameOverScene(this);
 			liveScene = splashScene;
-			
-			// Intialize Game Objects
-			tileMap = new TileMap(this, "assets/maps/test3.tmx");
-			addChild(tileMap);
-			
-			ball = new Ball(this);
-			addChild(ball);
-			
-			themeChannel = Assets.theme.play();
-		}
-
-		public function changeState():void {
+			addChild(liveScene);
 			
 		}
 		
 		public function update(event:Event):void {
 			// Update Objects
 			liveScene.update(event);
-			ball.update(event);
+
 			// Scroll game screen
 			/*
 			if (this.keys[Game.KEY_LEFT]) { this.x += scrollSpeed; }

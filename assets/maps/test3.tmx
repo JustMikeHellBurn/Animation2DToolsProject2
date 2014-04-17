@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="25" height="10" tilewidth="109" tileheight="109">
- <tileset firstgid="1" name="Dirt-Grass-4" tilewidth="108" tileheight="108">
-  <image source="assets/gfx/Game-Tiles/PNGs/Ground/Dirt-Grass-4.png" width="217" height="218"/>
+<map version="1.0" orientation="orthogonal" width="60" height="13" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
+  <image source="assets/gfx/tileset.png" trans="5e72e9" width="1218" height="386"/>
  </tileset>
- <layer name="Tile Layer 1" width="25" height="10">
+ <layer name="Background" width="60" height="13">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFQwUwAjETFdVR215a6ae2OeTYSUuaGYhZaEwDAEXgAIw=
+   eJztwwENAAAMw6B6mH+vN3AJkLBqqqqqzwNaBznl
+  </data>
+ </layer>
+ <layer name="Foreground" width="60" height="13">
+  <data encoding="base64" compression="zlib">
+   eJztUkEKAzEI9LCJj0qhP9iy///MptQBd3CD6aWHZmAgJmocVWRhYWFh4d+wdeqvi5hElU/dGbA+tfhsbJFcfzT4a4SS9EMd2bybXHszG5vVi7wjX9/nkV70ztt3M2J9vAv87nOyNujl+Br8X92bz6nkA4z0RjPK6uVeVYlnEOnF3Yxe7hfXAmT3uXU+jI0Y4WlsX8TO1DULnxd9Ke6MOe2dh3Envv0xP8S+jPBhG8TM/F/F3SvZuIveVa77Um5yY1dOLaAL2w==
+  </data>
+ </layer>
+ <layer name="Platform" width="60" height="13">
+  <data encoding="base64" compression="zlib">
+   eJztlFEOwCAIQ7kObPc/30JCk2Y/In9ufQkfKkojVTMhhBBecRI7mq+KCbkvmrUy967oEENNJ9Ht0c697eQy6OVqb+Z1/TXVIr4F3j78BQ+t/h38LW49bzJOwfV5PkgLvOo05nXODzr3re+Pfn8APSgLbA==
   </data>
  </layer>
 </map>
