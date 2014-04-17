@@ -24,6 +24,8 @@
 		public static var KEY_UP:int = 38;
 		public static var KEY_RIGHT:int = 39;
 		public static var KEY_DOWN:int = 40;
+		public static var KEY_SPACEBAR:int = 32;
+		public static var KEY_ESC:int = 27;
 		
 		protected var nativeStage:Stage;
 		
@@ -36,7 +38,12 @@
 		// Game Objects
 		// ==================================
 		public var ball:Ball;
-		public var tileMap:TileMap;
+		public var instructionTileMap:TileMap;
+		public var playTileMap:TileMap;
+		public var menuTileMap:TileMap;
+		public var gameOverTileMap:TileMap;
+		public var currentTileMap:TileMap;
+		
 		public var splashImage:SplashImage;
 		
 		// ==================================
@@ -91,7 +98,10 @@
 		private function init(event:Event):void
 		{
 			// Intialize Game Objects
-			tileMap = new TileMap(this, "assets/maps/test3.tmx");
+			instructionTileMap = new TileMap(this, "assets/maps/instructions.tmx");
+			menuTileMap = new TileMap(this, "assets/maps/menu.tmx");
+			playTileMap = new TileMap(this, "assets/maps/test3.tmx");
+			currentTileMap = instructionTileMap;
 			
 			ball = new Ball(this);
 			
@@ -107,6 +117,13 @@
 			liveScene = splashScene;
 			addChild(liveScene);
 			
+		}
+		
+		public function reset():void {
+			// Reset keys
+			for (var i:int = 0; i < Game.KEY_MAX; ++i) {
+				keys[i] = false;
+			}
 		}
 		
 		public function update(event:Event):void {
@@ -127,9 +144,9 @@
 
 			// Boundary Collision
 			if (this.x > 0) this.x = 0;
-			if (this.x < stage.stageWidth - tileMap.width) this.x = stage.stageWidth - tileMap.width;
+			if (this.x < stage.stageWidth - currentTileMap.width) this.x = stage.stageWidth - currentTileMap.width;
 			if (this.y > 0) this.y = 0;
-			if (this.y < stage.stageHeight - tileMap.height) this.y = stage.stageHeight - tileMap.height;
+			if (this.y < stage.stageHeight - currentTileMap.height) this.y = stage.stageHeight - currentTileMap.height;
 
 		}
 		

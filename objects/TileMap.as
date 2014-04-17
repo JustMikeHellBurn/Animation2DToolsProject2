@@ -15,12 +15,16 @@
 		public function TileMap(game:Game, url:String) {
 			super(game);
 
+			loadTileMap(url);
+		}
+
+		public function loadTileMap(url:String) {
 			// Load Tile Map from TMX File
 			TMX = new TMXTileMap();
 			TMX.addEventListener(Event.COMPLETE, drawLayers);
 			TMX.load(url);
 		}
-
+		
 		private function drawLayers(event:Event):void
 		{
 			
@@ -37,6 +41,9 @@
 
 		}
 		
+		public function destroy():void {
+			this.removeChildren();
+		}
 	}
 	
 }

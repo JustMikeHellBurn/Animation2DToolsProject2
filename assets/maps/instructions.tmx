@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="15" height="15" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
+  <image source="assets/gfx/tileset.png" width="1218" height="386"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="15" height="15">
+  <data encoding="base64" compression="zlib">
+   eJyd0bkKwkAQBuAUHqU2GzeFuWw8Oo9O8D46je//MP6Bf2AYNgmk+GDnIhMmj6JoDjkVJl501FOYgYOYcf32kKg4YV/KudL0Osax6fXMecYld5BZ19Jr9yr4P5n6jjdxwljvlXHuDBe4whZ2DTnZX9ducIcH7OHQkJMddO0JL3jDkkK5UC0P1LvIfcses/pGfWblRrY2CeSm6i03WsEaNsaRToGaGMAQRsYHvlAFarVxy2xFv5bZP4I4IBQ=
+  </data>
+ </layer>
+</map>

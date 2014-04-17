@@ -103,6 +103,7 @@
 			trace(newxml);
 
 			_textureAtlas = new TextureAtlas(Texture.fromBitmap(_sheet), newxml);
+
 			trace("done with atlas, dispatching");
 			dispatchEvent(new starling.events.Event(starling.events.Event.COMPLETE));
 		}

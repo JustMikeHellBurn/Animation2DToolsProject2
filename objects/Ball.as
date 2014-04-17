@@ -28,11 +28,12 @@
 			// Move ball Horizontally
 			if (game.keys[Game.KEY_LEFT]) {
 				this.dx = -MOVE_SPEED;
+				this.pivotX = 0;
 				this.scaleX = 1;
 			}
 			if (game.keys[Game.KEY_RIGHT]) {
 				this.dx = MOVE_SPEED;
-				this.pivotX = this.width  / 2;
+				this.pivotX = this.width;
 				this.scaleX = -1;
 			}
 			if (game.keys[Game.KEY_UP]) {
@@ -47,9 +48,9 @@
 			// Check collisions with tile boundaries
 			if (this.x < 0) this.x = 0;
 			if (this.y < 0) this.y = 0;
-			if (this.x + this.width > game.tileMap.width) this.x = game.tileMap.width - this.width;
-			if (this.y + this.height > game.tileMap.height) { // Rebound
-				this.y = game.tileMap.height - this.height;
+			if (this.x + this.width > game.currentTileMap.width) this.x = game.currentTileMap.width - this.width;
+			if (this.y + this.height > game.currentTileMap.height) { // Rebound
+				this.y = game.currentTileMap.height - this.height;
 				this.dy = REBOUND;
 			}
 		}

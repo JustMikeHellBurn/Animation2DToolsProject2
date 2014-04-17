@@ -1,11 +1,12 @@
 ﻿package scenes  {
 	
 	import objects.BaseObject;
-	
+	import flash.media.SoundChannel;
 	import starling.events.Event;
 	
 	public class Scene extends BaseObject {
-
+		protected var themeChannel:SoundChannel;
+		
 		public function Scene(game:Game) {
 			super(game);
 			// initialize the game by adding objects to the stage
