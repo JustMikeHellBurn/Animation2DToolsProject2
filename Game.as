@@ -13,6 +13,7 @@
 	import flash.events.KeyboardEvent;
 	import flash.display.Stage;
 	import flash.display.Scene;
+	import flash.media.SoundChannel;
 	
 	public class Game extends Sprite
 	{
@@ -29,6 +30,8 @@
 		// Key/Mouse Event Variables
 		// ==================================
 		public var keys:Array;
+		
+		protected var themeChannel:SoundChannel;
 		
 		// ==================================
 		// Game Objects
@@ -101,8 +104,14 @@
 			
 			ball = new Ball(this);
 			addChild(ball);
+			
+			themeChannel = Assets.theme.play();
 		}
 
+		public function changeState():void {
+			
+		}
+		
 		public function update(event:Event):void {
 			// Update Objects
 			liveScene.update(event);
