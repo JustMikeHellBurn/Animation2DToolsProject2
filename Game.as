@@ -61,12 +61,15 @@
 		
 		public function Game()
 		{
+			// Initialize assets
+			Assets.init();
+			
 			// Set Key Values
 			keys = [];
 			for (var i:int = 0; i < Game.KEY_MAX; ++i) {
 				keys[i] = false;
 			}
-			scrollSpeed = 5;
+			scrollSpeed = 20;
 			
 			// Establish a reference to the native stage
 			nativeStage = Starling.current.nativeStage;
@@ -93,28 +96,35 @@
 			liveScene = splashScene;
 			
 			// Intialize Game Objects
-			tileMap = new TileMap(this, "assets/maps/test.tmx");
+			tileMap = new TileMap(this, "assets/maps/test3.tmx");
 			addChild(tileMap);
 			
 			ball = new Ball(this);
-			
+			addChild(ball);
 		}
 
 		public function update(event:Event):void {
 			// Update Objects
 			liveScene.update(event);
-			
+			ball.update(event);
 			// Scroll game screen
+			/*
 			if (this.keys[Game.KEY_LEFT]) { this.x += scrollSpeed; }
 			if (this.keys[Game.KEY_UP]) { this.y += scrollSpeed; }
 			if (this.keys[Game.KEY_RIGHT]) { this.x -= scrollSpeed; }
 			if (this.keys[Game.KEY_DOWN]) { this.y -= scrollSpeed; }
-			
+			*/
+		
+			// Lock game screen to ball
+			this.x = -ball.x + stage.stageWidth / 2 - ball.width / 2;
+			this.y = -ball.y + stage.stageHeight / 2 - ball.height / 2;
+
 			// Boundary Collision
 			if (this.x > 0) this.x = 0;
 			if (this.x < stage.stageWidth - this.width) this.x = stage.stageWidth - this.width;
 			if (this.y > 0) this.y = 0;
-			if (this.y < stage.stageHeight - this.height) this.y = stage.stageHeight - this.height;
+			if (this.y < stage.stageHeight - this.height - 100) this.y = stage.stageHeight - this.height - 100;
+
 		}
 		
 		/* Key/Mouse Event Listeners */

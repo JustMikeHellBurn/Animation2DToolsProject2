@@ -2,18 +2,20 @@
 
 	import starling.display.Sprite;
 	import starling.events.Event;
-	import flash.display.MovieClip;
+	import starling.display.MovieClip;
 	
 	public class BaseObject extends Sprite {
 
 		protected var spriteClip:MovieClip;
 		
 		protected var game:Game;
-		protected var dx, dy:Number;
+		public var dx:Number, dy:Number;
 		
 		public function BaseObject(game:Game) {
 			this.game = game;
 			this.spriteClip = null;
+			this.dx = 0;
+			this.dy = 0;
 		}
 
 		// Abstract Init Method

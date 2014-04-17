@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="25" height="10" tilewidth="109" tileheight="109">
+ <tileset firstgid="1" name="Dirt-Grass-4" tilewidth="108" tileheight="108">
+  <image source="assets/gfx/Game-Tiles/PNGs/Ground/Dirt-Grass-4.png" width="217" height="218"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="25" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFQwUwAjETFdVR215a6ae2OeTYSUuaGYhZaEwDAEXgAIw=
+  </data>
+ </layer>
+</map>
