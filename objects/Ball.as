@@ -39,8 +39,8 @@
 			if (this.x < 0) this.x = 0;
 			if (this.y < 0) this.y = 0;
 			if (this.x + this.width > game.tileMap.width) this.x = game.tileMap.width - this.width;
-			if (this.y + this.height > game.tileMap.height + 108) { // Rebound
-				this.y = game.tileMap.height + 108 - this.height;
+			if (this.y + this.height > game.tileMap.height) { // Rebound
+				this.y = game.tileMap.height - this.height;
 				this.dy = REBOUND;
 			}
 		}

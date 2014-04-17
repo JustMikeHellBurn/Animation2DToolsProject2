@@ -130,9 +130,9 @@
 
 			// Boundary Collision
 			if (this.x > 0) this.x = 0;
-			if (this.x < stage.stageWidth - this.width) this.x = stage.stageWidth - this.width;
+			if (this.x < stage.stageWidth - tileMap.width) this.x = stage.stageWidth - tileMap.width;
 			if (this.y > 0) this.y = 0;
-			if (this.y < stage.stageHeight - this.height - 100) this.y = stage.stageHeight - this.height - 100;
+			if (this.y < stage.stageHeight - tileMap.height) this.y = stage.stageHeight - tileMap.height;
 
 		}
 		
