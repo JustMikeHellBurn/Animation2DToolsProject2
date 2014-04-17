@@ -26,7 +26,9 @@
 			
 		   for(var i:int = 0; i < TMX.layers().length; i++)
 		   {
+			   trace(TMX.layers()[i].getData());
 				addChild(TMX.layers()[i].getHolder());
+				trace(TMX.layers()[i].getHolder().width);
 		   }
 
 		}
