@@ -16,7 +16,26 @@
 	import flash.display.Scene;
 	import flash.media.SoundChannel;
 	
-	public class Game extends Sprite
+	import citrus.core.starling.StarlingState;
+	
+	import citrus.core.starling.StarlingCitrusEngine;
+	import citrus.objects.platformer.box2d.Platform;
+	import citrus.objects.platformer.box2d.MovingPlatform;
+	import citrus.objects.platformer.box2d.Hero;
+	import citrus.objects.platformer.box2d.Enemy;
+	import citrus.physics.box2d.IBox2DPhysicsObject;
+	import citrus.physics.box2d.Box2DUtils;
+	import citrus.physics.box2d.Box2D;
+	import citrus.view.starlingview.AnimationSequence;
+	
+	
+	import citrus.math.MathVector;
+	
+	import citrus.utils.objectmakers.ObjectMaker2D;   
+	import flash.display.Bitmap; 
+	import flash.geom.Rectangle;
+	
+	public class Game extends StarlingState
 	{
 		// Game Constants
 		public static var KEY_MAX:int = 256;
@@ -46,6 +65,8 @@
 		
 		public var splashImage:SplashImage;
 		
+		public var enemy:Enemy;
+		
 		// ==================================
 		// Game Variables (Score/Life/etc)
 		// ==================================
@@ -69,8 +90,17 @@
 		public var gameOverScene:GameOverScene;
 		public var liveScene:Scene;
 		
+        [Embed(source="assets/maps/test3.tmx", mimeType="application/octet-stream")]    
+        private var tileMap:Class;     
+		
+        [Embed(source="assets/gfx/tileset.png")]    
+        private var tileView:Class;  
+		
 		public function Game()
 		{
+			super();
+			
+			/*
 			// Initialize assets
 			Assets.init();
 			
@@ -88,13 +118,40 @@
 			nativeStage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyboardDown);
 			nativeStage.addEventListener(KeyboardEvent.KEY_UP, onKeyboardUp);
 			
+			
 			// Update the game
 			addEventListener(Event.ENTER_FRAME, update);
 			
 			// initialize the game by adding objects to the stage
 			addEventListener(Event.ADDED_TO_STAGE, init);
+			
+			*/
 		}
 
+		override public function initialize():void {
+    		super.initialize();
+	
+			var box2D:Box2D = new Box2D("box2D");
+			box2D.visible = true;
+			add(box2D);
+			
+            var bitmapView:Bitmap = new tileView();    
+            bitmapView.name = "tileset.png";    
+            
+            ObjectMaker2D.FromTiledMap(XML(new tileMap()), [bitmapView]);     
+			
+			var hero:Hero = getObjectByName("hero") as Hero;  
+
+			view.camera.setUp(hero, new Rectangle(0, 0, 1472, 576));
+			
+			//var ball:Ball = new Ball("coin", {x:360, y:200, view:"levels/SoundPatchDemo/jewel.png"});
+/*
+			add(new Platform("bottom", {x:stage.stageWidth / 2, y:stage.stageHeight, width:stage.stageWidth}));
+			add(new Platform("cloud", {x:250, y:250, width:170, oneWay:true}));
+		*/	 
+
+		}
+		
 		private function init(event:Event):void
 		{
 			// Intialize Game Objects
@@ -117,6 +174,9 @@
 			liveScene = splashScene;
 			addChild(liveScene);
 			
+			enemy = new Enemy("enemy",{x:900,y:700,width:78,height:132,leftBound:60,rightBound:950});
+			add(enemy);
+			
 		}
 		
 		public function reset():void {
@@ -126,17 +186,18 @@
 			}
 		}
 		
+/*
 		public function update(event:Event):void {
 			// Update Objects
 			liveScene.update(event);
 
 			// Scroll game screen
-			/*
-			if (this.keys[Game.KEY_LEFT]) { this.x += scrollSpeed; }
-			if (this.keys[Game.KEY_UP]) { this.y += scrollSpeed; }
-			if (this.keys[Game.KEY_RIGHT]) { this.x -= scrollSpeed; }
-			if (this.keys[Game.KEY_DOWN]) { this.y -= scrollSpeed; }
-			*/
+			
+			//if (this.keys[Game.KEY_LEFT]) { this.x += scrollSpeed; }
+			//if (this.keys[Game.KEY_UP]) { this.y += scrollSpeed; }
+			//if (this.keys[Game.KEY_RIGHT]) { this.x -= scrollSpeed; }
+			//if (this.keys[Game.KEY_DOWN]) { this.y -= scrollSpeed; }
+			
 		
 			// Lock game screen to ball
 			this.x = -ball.x + stage.stageWidth / 2 - ball.width / 2;
@@ -149,7 +210,8 @@
 			if (this.y < stage.stageHeight - currentTileMap.height) this.y = stage.stageHeight - currentTileMap.height;
 
 		}
-		
+
+		*/
 		/* Key/Mouse Event Listeners */
 		
 		// Key On Down

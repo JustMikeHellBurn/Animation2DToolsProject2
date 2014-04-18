@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="60" height="13" tilewidth="64" tileheight="64">
+<map version="1.0" orientation="orthogonal" width="60" height="10" tilewidth="64" tileheight="64">
  <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
-  <image source="assets/gfx/tileset.png" trans="5e72e9" width="1218" height="386"/>
+  <image source="../gfx/tileset.png" trans="5e72e9" width="1218" height="386"/>
+  <tile id="20">
+   <properties>
+    <property name="hero" value="citrus.objects.platformer.box2d.Hero"/>
+   </properties>
+  </tile>
  </tileset>
- <layer name="Background" width="60" height="13">
+ <imagelayer name="Image Layer 1" width="60" height="10">
+  <image source="../gfx/junglebackground.png"/>
+ </imagelayer>
+ <layer name="Background" width="60" height="10">
   <data encoding="base64" compression="zlib">
-   eJztwwENAAAMw6B6mH+vN3AJkLBqqqqqzwNaBznl
+   eJztwTEBAAAAwqD1T20JT6AAAHgaCWAAAQ==
   </data>
  </layer>
- <layer name="Foreground" width="60" height="13">
+ <layer name="Foreground" width="60" height="10">
   <data encoding="base64" compression="zlib">
-   eJztUkEKAzEI9LCJj0qhP9iy///MptQBd3CD6aWHZmAgJmocVWRhYWFh4d+wdeqvi5hElU/dGbA+tfhsbJFcfzT4a4SS9EMd2bybXHszG5vVi7wjX9/nkV70ztt3M2J9vAv87nOyNujl+Br8X92bz6nkA4z0RjPK6uVeVYlnEOnF3Yxe7hfXAmT3uXU+jI0Y4WlsX8TO1DULnxd9Ke6MOe2dh3Envv0xP8S+jPBhG8TM/F/F3SvZuIveVa77Um5yY1dOLaAL2w==
+   eJztUkEKxDAI9NDER2WhP2jp/z+zWdYBO9hg9rKXDAzERI2jiiwsLGSwdeq/i5hElW/dGbA+tfhsbJFcfzT4a4SS9EMd2byb3HszG5vVi7wjX9/nkV70zttPM2J9vAv87nOyNujl+Br8X92bz6nkA4z0RjPK6uVeVYlnEOnF3Yxe7hfXAmT3uXW+jI0YYTe2H2Jn6pqFz4u+FHfGnI7Oy3gQP/6YH2JPI3zYBjEz/1dx90o27qJ3lfu+lIfc2JU3KtAL2w==
   </data>
  </layer>
- <layer name="Platform" width="60" height="13">
+ <layer name="Platform" width="60" height="10">
   <data encoding="base64" compression="zlib">
-   eJztlFEOwCAIQ7kObPc/30JCk2Y/In9ufQkfKkojVTMhhBBecRI7mq+KCbkvmrUy967oEENNJ9Ht0c697eQy6OVqb+Z1/TXVIr4F3j78BQ+t/h38LW49bzJOwfV5PkgLvOo05nXODzr3re+Pfn8APSgLbA==
+   eJztlFEKACEIRL2Otvc/3yI4MPST+teuD/yoLIecEhmGHhpxExXNK6KD77NkLc99IjJYU9NNZHtUubdKLoNenvZ6XtZfXS3Dt8Dbh7/godO/g79FJedNRim4Ps8baYFXlca8zvlG5+76/uj3FzpYC2w=
   </data>
  </layer>
+ <objectgroup name="citrus" width="60" height="10">
+  <object name="hero" type="citrus.objects.platformer.box2d.Hero" x="64" y="385" width="64" height="63"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1" y="513" width="447" height="63"/>
+ </objectgroup>
 </map>
