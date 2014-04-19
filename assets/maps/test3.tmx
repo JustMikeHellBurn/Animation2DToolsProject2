@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="60" height="10" tilewidth="64" tileheight="64">
+<map version="1.0" orientation="orthogonal" width="64" height="15" tilewidth="64" tileheight="64">
  <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
   <image source="../gfx/tileset.png" trans="5e72e9" width="1218" height="386"/>
   <tile id="20">
@@ -8,26 +8,87 @@
    </properties>
   </tile>
  </tileset>
- <imagelayer name="Image Layer 1" width="60" height="10">
-  <image source="../gfx/junglebackground.png"/>
- </imagelayer>
- <layer name="Background" width="60" height="10">
+ <layer name="Background" width="64" height="15">
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20JT6AAAHgaCWAAAQ==
+   eJztwQENAAAAwqD3T20PBxQAAAD8Gw8AAAE=
   </data>
  </layer>
- <layer name="Foreground" width="60" height="10">
-  <data encoding="base64" compression="zlib">
-   eJztUkEKxDAI9NDER2WhP2jp/z+zWdYBO9hg9rKXDAzERI2jiiwsLGSwdeq/i5hElW/dGbA+tfhsbJFcfzT4a4SS9EMd2byb3HszG5vVi7wjX9/nkV70zttPM2J9vAv87nOyNujl+Br8X92bz6nkA4z0RjPK6uVeVYlnEOnF3Yxe7hfXAmT3uXW+jI0YYTe2H2Jn6pqFz4u+FHfGnI7Oy3gQP/6YH2JPI3zYBjEz/1dx90o27qJ3lfu+lIfc2JU3KtAL2w==
-  </data>
- </layer>
- <layer name="Platform" width="60" height="10">
-  <data encoding="base64" compression="zlib">
-   eJztlFEKACEIRL2Otvc/3yI4MPST+teuD/yoLIecEhmGHhpxExXNK6KD77NkLc99IjJYU9NNZHtUubdKLoNenvZ6XtZfXS3Dt8Dbh7/godO/g79FJedNRim4Ps8baYFXlca8zvlG5+76/uj3FzpYC2w=
-  </data>
- </layer>
- <objectgroup name="citrus" width="60" height="10">
-  <object name="hero" type="citrus.objects.platformer.box2d.Hero" x="64" y="385" width="64" height="63"/>
-  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1" y="513" width="447" height="63"/>
+ <objectgroup name="citrus" width="64" height="15">
+  <object name="jibbly" type="objects.Jibbly" x="256" y="768" width="64" height="64">
+   <properties>
+    <property name="acceleration" value="1"/>
+    <property name="maxVelocity" value="2.5"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="192" y="832" width="448" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="448" y="704" width="128" height="64">
+   <properties>
+    <property name="oneWay" value="true"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="704" y="576" width="128" height="64">
+   <properties>
+    <property name="oneWay" value="true"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1152" y="704" width="128" height="64">
+   <properties>
+    <property name="oneWay" value="true"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1408" y="576" width="128" height="64">
+   <properties>
+    <property name="oneWay" value="true"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1664" y="448" width="128" height="64">
+   <properties>
+    <property name="oneWay" value="true"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="2048" y="704" width="192" height="64">
+   <properties>
+    <property name="oneWay" value="true"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1088" y="832" width="320" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3328" y="192" width="128" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3584" y="320" width="192" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3904" y="448" width="128" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="2816" y="768" width="64" height="128"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="2880" y="704" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="2944" y="640" width="128" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3072" y="704" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3136" y="768" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3200" y="512" width="384" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3200" y="832" width="384" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3584" y="768" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3648" y="704" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3712" y="640" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3776" y="576" width="256" height="384"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="320" y="896" width="2624" height="128">
+   <properties>
+    <property name="oneWay" value="true"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3008" y="192" width="128" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="2560" y="384" width="192" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="2240" y="384" width="128" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1283" y="254" width="896" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1088" y="256" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="768" y="256" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="64" y="192" width="512" height="64"/>
+  <object name="wall" type="citrus.objects.platformer.box2d.Platform" x="4032" y="0" width="64" height="960"/>
+  <object name="wall" type="citrus.objects.platformer.box2d.Platform" x="0" y="0" width="64" height="960"/>
  </objectgroup>
+ <layer name="Foreground" width="64" height="15">
+  <data encoding="base64" compression="zlib">
+   eJzll91Og0AQhfeCtk+gljus19TizxUa3wA1+P7P4p4wJ04mU2ANWxI9yRfKMsCePbMkrcP/0Um4jxwjdeRr1RldXn3kIfIYhjU4rTudVfQUeQ5D9qBRR/YFj/XC774SllAZuTZjexmfUi/An+4HjOl9YmXfB93MnK+nMsybbw4xf/YD/MI31qRfaU5Li/3gZcSc4bWRI3rAy/0S2gta6LfSGV9C8Ez/ei3+uri3m/Dz7eP3L5eKyC7j82+FKnJQ52Ni3kchp+B9m/kd8H2nsLJj7Pu53lMyLITf3DtH8Fo54/Do5e7Vo+dTck/JEHXWf+HU4ZmbkLY2VRh8HoQp6b2hNbXnvQzP+be1O3O+Db7HVP/wofe350uLe8HLn/8DWmFMuP4itAZPb0I7cS9qXk3tGPRTCXo9tFfuA7tenv9OYIYb9Zs54vqn0BlQz3x577vAGnveqWd+nHmuh/aombNm1j/6/xs9Py5N
+  </data>
+ </layer>
+ <layer name="Platform" width="64" height="15">
+  <data encoding="base64" compression="zlib">
+   eJzt0l0KABAQReHZhEX42f/6dIt4RI2o89U8KKIOMwAA4CW2wb92GmpfcXwL/O32zgd36Eyy8VdCG9ynFurQe2i90jXZ+CtzS7yvAqReBEk=
+  </data>
+ </layer>
 </map>

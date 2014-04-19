@@ -2,6 +2,11 @@
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
 <!-- $TexturePacker:SmartUpdate:7f923d0a66bc5825886d7924ee8910f2:0fa03eb6fec952a047be5ccb3bab7c65:cde709370900f12288f3449eded86f07$ -->
 <TextureAtlas imagePath="atlas.png">
+	<SubTexture name="jibblywalk1" x="0" y="270" width="48" height="42"/>
+	<SubTexture name="jibblywalk2" x="48" y="270" width="48" height="42"/>
+	<SubTexture name="jibblywalk3" x="96" y="270" width="49" height="43"/>
+
+
 	<SubTexture name="splashimage" x="1090" y="0" width="750" height="275"/>
     <SubTexture name="bigbullet" x="0" y="200" width="12" height="12"/>
     <SubTexture name="bigexplosion01" x="396" y="69" width="128" height="128"/>

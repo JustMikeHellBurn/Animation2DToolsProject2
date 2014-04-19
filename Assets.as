@@ -30,9 +30,25 @@
 		public static var menuTheme:Class;
 		public static var menuSound:Sound;
 		
+		
+		// Alien Animation Graphics
+		[Embed(source="assets/gfx/jibblyAtlas.xml", mimeType="application/octet-stream")]
+		private static var jibblyXML:Class;
+		
+		[Embed(source="assets/gfx/jibbly.png")] 
+		private static var jibbly:Class;
+		public static var jibblyAtlas:TextureAtlas;
+		
+		
+		//[Embed(source = 'assets/gfx/jibblyidle.png')] 
+		//public static var JIBBLY_IDLE:Class;
+		
 		public static function init():void {
 			mpAtlas = new TextureAtlas(Texture.fromBitmap(new atlas()),
 				XML(new atlasXML()));
+				
+			jibblyAtlas = new TextureAtlas(Texture.fromBitmap(new jibbly()),
+				XML(new jibblyXML()));
 				
 			playSound = new playTheme();
 			playSound.play(0,0, new SoundTransform(0));

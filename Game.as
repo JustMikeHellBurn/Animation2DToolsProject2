@@ -9,6 +9,7 @@
 	
 	import objects.Ball;
 	import objects.SplashImage;
+	import objects.Jibbly;
 	
 	import flash.events.MouseEvent;
 	import flash.events.KeyboardEvent;
@@ -23,17 +24,22 @@
 	import citrus.objects.platformer.box2d.MovingPlatform;
 	import citrus.objects.platformer.box2d.Hero;
 	import citrus.objects.platformer.box2d.Enemy;
+	import citrus.objects.platformer.box2d.Crate;
 	import citrus.physics.box2d.IBox2DPhysicsObject;
 	import citrus.physics.box2d.Box2DUtils;
 	import citrus.physics.box2d.Box2D;
-	import citrus.view.starlingview.AnimationSequence;
-	
+
 	
 	import citrus.math.MathVector;
 	
 	import citrus.utils.objectmakers.ObjectMaker2D;   
 	import flash.display.Bitmap; 
 	import flash.geom.Rectangle;
+	import Box2D.Common.Math.b2Vec2;
+	
+	import citrus.view.starlingview.AnimationSequence;
+	import citrus.view.starlingview.StarlingArt;
+	import citrus.view.starlingview.StarlingView;
 	
 	public class Game extends StarlingState
 	{
@@ -96,6 +102,9 @@
         [Embed(source="assets/gfx/tileset.png")]    
         private var tileView:Class;  
 		
+		
+
+		
 		public function Game()
 		{
 			super();
@@ -130,19 +139,25 @@
 
 		override public function initialize():void {
     		super.initialize();
-	
+			Assets.init();
+			Assets.playSound.play();
+			
+			// Make animations loop
+			StarlingArt.setLoopAnimations(["idle", "jump", "walk", "fall"]);
+			
+			// Add physics (box2D) to the game
 			var box2D:Box2D = new Box2D("box2D");
 			box2D.visible = true;
 			add(box2D);
 			
             var bitmapView:Bitmap = new tileView();    
             bitmapView.name = "tileset.png";    
-            
+
             ObjectMaker2D.FromTiledMap(XML(new tileMap()), [bitmapView]);     
 			
-			var hero:Hero = getObjectByName("hero") as Hero;  
-
-			view.camera.setUp(hero, new Rectangle(0, 0, 1472, 576));
+			var jibbly:Jibbly = getObjectByName("jibbly") as Jibbly; 
+			
+			view.camera.setUp(jibbly);
 			
 			//var ball:Ball = new Ball("coin", {x:360, y:200, view:"levels/SoundPatchDemo/jewel.png"});
 /*
@@ -150,6 +165,12 @@
 			add(new Platform("cloud", {x:250, y:250, width:170, oneWay:true}));
 		*/	 
 
+			// If you update any properties on the state's view, call updateCanvas() afterwards.
+			//view.camera.cameraLensWidth = 800;
+			//view.camera.cameraLensHeight = 400;
+
+			//BlittingView(view).updateCanvas(); // Don't forget to call this
+			
 		}
 		
 		private function init(event:Event):void
