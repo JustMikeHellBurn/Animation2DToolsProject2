@@ -5,7 +5,6 @@
 	import starling.core.Starling;
 	
 	import objects.TileMap;
-	import scenes.*;
 	
 	import objects.Ball;
 	import objects.SplashImage;
@@ -92,18 +91,9 @@
 		// ==================================
 		// Game Scenes
 		// ==================================
-		public var splashScene:SplashScene;
-		public var instructionScene:InstructionScene;
-		public var menuScene:MenuScene;
-		public var playScene:PlayScene;
-		public var gameOverScene:GameOverScene;
-		public var liveScene:Scene;
+
 		
-        [Embed(source="assets/maps/test3.tmx", mimeType="application/octet-stream")]    
-        private var tileMap:Class;     
-		
-        [Embed(source="assets/gfx/tileset.png")]    
-        private var tileView:Class;  
+
 		
 		public function Game()
 		{
@@ -189,16 +179,7 @@
 			ball = new Ball(this);
 			
 			
-			splashImage = new SplashImage(this);
-			
-			// Initialize Scenes
-			splashScene = new SplashScene(this);
-			instructionScene = new InstructionScene(this);
-			menuScene = new MenuScene(this);
-			playScene = new PlayScene(this);
-			gameOverScene = new GameOverScene(this);
-			liveScene = splashScene;
-			addChild(liveScene);
+
 			
 			enemy = new Enemy("enemy",{x:900,y:700,width:78,height:132,leftBound:60,rightBound:950});
 			add(enemy);

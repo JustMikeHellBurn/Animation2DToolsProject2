@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="64" height="15" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
+  <image source="../gfx/tileset.png" trans="5e72e9" width="1218" height="386"/>
+  <tile id="20">
+   <properties>
+    <property name="hero" value="citrus.objects.platformer.box2d.Hero"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="64" height="15">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAAD8Gw8AAAE=
+  </data>
+ </layer>
+ <layer name="Foreground" width="64" height="15">
+  <data encoding="base64" compression="zlib">
+   eJzlV11Pg0AQvAfa/gIV3rA+U4sfT2j8B6ih//+3eBN24rpZ4DCFxjjJhN6xHDs7uyStwv/BUXgfeYisIk8XzWh9dJEPkY+hr8HxsulcBE+Rz6H3HqzVlX3Ba3Xmd18Jz4Ei8trs5bI/hU4IfbofsKfnxMK+D7hJzNdDEdLyTQXyS82H/rMfoBe6UZPujDmtCWjP1Zr94NWEPkNrLVf0gOf7GsjDz9wB+Fk4+0NgfAqgmfp1Lf4yUCdvRjU423X4/vbx+7cUssjdguffCsvIvVqPgX4fhEsC2rcLvwO67xQt7B77PlX7HA8z4W+eTQG0ls4+NHq+e/Ho+Tm+z/EQcVZ/5sThzE2YV5sy9Dr3wino2dCYmnnPwyH9NnZn1tvga5yrHzr0fHu6NDgLnv/8H9AIx4D7L8LG0MObsJl4FjGvJnaM1FMKdT20Vs6BrZenvxXSw436TR9x/1PYGiKe/vLZdyFj7LpVZ34MnOtRa9Qcqpf+Jlr96P8vfrEu7Q==
+  </data>
+ </layer>
+ <layer name="Platform" width="64" height="15">
+  <data encoding="base64" compression="zlib">
+   eJzt0l0KABAQReHZhEX42f/6dIt4RI2o89U8KKIOMwAA4CW2wb92GmpfcXwL/O32zgd36Eyy8VdCG9ynFurQe2i90jXZ+CtzS7yvAqReBEk=
+  </data>
+ </layer>
+ <objectgroup name="citrus" width="64" height="15">
+  <object name="jibbly" type="objects.Jibbly" x="259" y="546" width="48" height="42">
+   <properties>
+    <property name="acceleration" value="4"/>
+    <property name="maxVelocity" value="4"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="192" y="832" width="448" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="448" y="704" width="128" height="64">
+   <properties>
+    <property name="oneWay" value="true"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="704" y="576" width="128" height="64">
+   <properties>
+    <property name="oneWay" value="true"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1152" y="704" width="127" height="29">
+   <properties>
+    <property name="oneWay" value="true"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1408" y="576" width="128" height="64">
+   <properties>
+    <property name="oneWay" value="true"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1664" y="448" width="128" height="64">
+   <properties>
+    <property name="oneWay" value="true"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="2048" y="704" width="192" height="64">
+   <properties>
+    <property name="oneWay" value="true"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1088" y="832" width="320" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3328" y="192" width="128" height="320"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3584" y="320" width="192" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3904" y="448" width="128" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="2816" y="768" width="64" height="128"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="2880" y="704" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="2944" y="640" width="128" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3072" y="704" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3136" y="768" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3200" y="832" width="384" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3584" y="768" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3648" y="704" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3712" y="640" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3776" y="576" width="256" height="384"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="320" y="896" width="2624" height="128">
+   <properties>
+    <property name="oneWay" value="true"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3008" y="192" width="128" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="2560" y="384" width="192" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="2240" y="384" width="128" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1280" y="256" width="896" height="64">
+   <properties>
+    <property name="oneWay" value="true"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1088" y="256" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="768" y="256" width="64" height="64"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="64" y="192" width="512" height="64"/>
+  <object name="wall" type="citrus.objects.platformer.box2d.Platform" x="4032" y="0" width="64" height="960"/>
+  <object name="wall" type="citrus.objects.platformer.box2d.Platform" x="0" y="0" width="64" height="960"/>
+  <object name="enemy" type="citrus.objects.platformer.box2d.Enemy" x="1152" y="768" width="64" height="64">
+   <properties>
+    <property name="leftBound" value="1130"/>
+    <property name="rightBound" value="1400"/>
+   </properties>
+  </object>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3203" y="513">
+   <polygon points="0,0 380,1 189,187"/>
+  </object>
+  <object name="enemy" type="citrus.objects.platformer.box2d.Enemy" x="2112" y="633" width="64" height="64">
+   <properties>
+    <property name="leftBound" value="2080"/>
+    <property name="rightBound" value="2200"/>
+   </properties>
+  </object>
+  <object name="enemy" type="citrus.objects.platformer.box2d.Enemy" x="3241" y="768" width="64" height="64">
+   <properties>
+    <property name="leftBound" value="3200"/>
+    <property name="rightBound" value="3525"/>
+   </properties>
+  </object>
+  <object name="enemy" type="citrus.objects.platformer.box2d.Enemy" x="3352" y="763" width="64" height="64">
+   <properties>
+    <property name="leftBound" value="3200"/>
+    <property name="rightBound" value="3525"/>
+   </properties>
+  </object>
+  <object name="enemy" type="citrus.objects.platformer.box2d.Enemy" x="2624" y="317" width="64" height="64">
+   <properties>
+    <property name="leftBound" value="2560"/>
+    <property name="rightBound" value="2720"/>
+   </properties>
+  </object>
+  <object name="MovingPlatform" type="citrus.objects.platformer.box2d.MovingPlatform" x="2303" y="706" width="128" height="64">
+   <properties>
+    <property name="endX" value="2700"/>
+    <property name="endY" value="706"/>
+    <property name="speed" value="2"/>
+    <property name="startX" value="2350"/>
+    <property name="startY" value="706"/>
+   </properties>
+  </object>
+  <object name="MovingPlatform" type="citrus.objects.platformer.box2d.MovingPlatform" x="1856" y="192" width="64" height="64">
+   <properties>
+    <property name="endX" value="1200"/>
+    <property name="endY" value="192"/>
+    <property name="speed" value="4"/>
+    <property name="startX" value="2000"/>
+    <property name="startY" value="192"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

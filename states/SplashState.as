@@ -2,12 +2,17 @@
 
 	import starling.animation.DelayedCall;
 	import starling.core.Starling;
+	import citrus.core.CitrusEngine;
+	
 	import objects.SplashImage;
+	
+	import flash.media.SoundChannel;
 	import flash.media.SoundTransform;
 	
 	public class SplashState extends BaseState {
-		public static var SPLASH_DELAY:Number = 3.0;
+		public static var SPLASH_DELAY:Number = 1.0;
 		
+		private var themeChannel:SoundChannel;
 		private var delayedCall:DelayedCall;
 		private var splashImage:SplashImage;
 		
@@ -22,11 +27,15 @@
 			delayedCall = new DelayedCall(splashDelay, SplashState.SPLASH_DELAY);
 			delayedCall.repeatCount = 1;
 			Starling.juggler.add(delayedCall);
-			Assets.splashSound.play(0, 1, new SoundTransform(0.25));
+			themeChannel = Assets.splashSound.play(0, 1, new SoundTransform(0.25));
 		}
 		
 		override public function destroy():void {
 			super.destroy();
+			// Stop Splash Theme
+			themeChannel.stop();
+			// Go to instructions state
+			CitrusEngine.getInstance().state = new InstructionState();
 		}
 		
 		private function splashDelay():void {

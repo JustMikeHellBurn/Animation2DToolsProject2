@@ -44,18 +44,36 @@
 		
 		public static var jibblyAtlas:TextureAtlas;
 		
+	
+        [Embed(source="assets/gfx/tileset.png")]    
+        public static var TILESET:Class;  
 		
-		//[Embed(source = 'assets/gfx/jibblyidle.png')] 
-		//public static var JIBBLY_IDLE:Class;
+		// Tmx Maps (levels, instruction, menu, and game over
+		[Embed(source="assets/maps/test3.tmx", mimeType="application/octet-stream")]    
+        public static var LEVEL1_MAP:Class;     
 		
+        [Embed(source="assets/maps/instructions.tmx", mimeType="application/octet-stream")]    
+        public static var INSTRUCTIONS_MAP:Class;     
+		
+        [Embed(source="assets/maps/menu.tmx", mimeType="application/octet-stream")]    
+        public static var MENU_MAP:Class;     
+		
+        [Embed(source="assets/maps/gameover.tmx", mimeType="application/octet-stream")]    
+        public static var GAMEOVER_MAP:Class;     
+		
+
 		public static function init():void {
 
 			mpAtlas = new TextureAtlas(Texture.fromBitmap(new atlasBitmap()), XML(new atlasXML()));
 			jibblyAtlas = new TextureAtlas(Texture.fromBitmap(new jibblyBitmap()), XML(new jibblyXML()));
 			
-			// Load Themes
+			// Load SFX Assets
 			splashSound = new splashTheme();
 			splashSound.play(0,0, new SoundTransform(0));
+			
+			instructionSound = new instructionsTheme();
+			instructionSound.play(0,0, new SoundTransform(0));
+			
 		}
 		
 	}
