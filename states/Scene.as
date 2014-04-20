@@ -1,10 +1,10 @@
-﻿package scenes  {
+﻿package states  {
 	
 	import objects.BaseObject;
 	import flash.media.SoundChannel;
 	import starling.events.Event;
 	
-	public class Scene extends BaseObject {
+	public class BaseState extends BaseObject {
 		protected var themeChannel:SoundChannel;
 		
 		public function Scene(game:Game) {

@@ -1,20 +1,20 @@
 ﻿package objects {
 	
 	import starling.core.Starling;
-	import starling.display.MovieClip;
-	import flash.display.Stage;
+	import citrus.objects.CitrusSprite;
+	import citrus.core.CitrusEngine;
 	
-	public class SplashImage extends BaseObject {
+	public class SplashImage extends CitrusSprite {
 
-		public function SplashImage(game:Game) {
-			super(game);
-			// Load our Plane image from our Texture Atlas
-			spriteClip = new MovieClip(Assets.mpAtlas.getTextures("splashimage"), 1);
-			Starling.juggler.add(spriteClip);
-			
-			this.x = nativeStage.stageWidth / 2 - spriteClip.width / 2;
-			this.y = nativeStage.stageHeight / 2 - spriteClip.height / 2;
-			addChild(spriteClip);
+		public function SplashImage() {
+			super("SplashImage");
+
+			// Load splash image to view
+			view = Assets.mpAtlas.getTexture("splashimage");
+
+			// Center splash image
+			x = CitrusEngine.getInstance().stage.stageWidth / 2 - view.width / 2;
+			y = CitrusEngine.getInstance().stage.stageHeight / 2 - view.height / 2;
 		}
 
 	}

@@ -41,6 +41,9 @@
 	import citrus.view.starlingview.StarlingArt;
 	import citrus.view.starlingview.StarlingView;
 	
+	import citrus.core.CitrusEngine;
+	import citrus.core.State;
+	
 	public class Game extends StarlingState
 	{
 		// Game Constants
@@ -102,12 +105,13 @@
         [Embed(source="assets/gfx/tileset.png")]    
         private var tileView:Class;  
 		
-		
-
-		
 		public function Game()
 		{
 			super();
+			
+			// Set up game assets
+			Assets.init();
+			
 			
 			/*
 			// Initialize assets
@@ -139,7 +143,6 @@
 
 		override public function initialize():void {
     		super.initialize();
-			Assets.init();
 			Assets.playSound.play();
 			
 			// Make animations loop
@@ -147,12 +150,14 @@
 			
 			// Add physics (box2D) to the game
 			var box2D:Box2D = new Box2D("box2D");
-			box2D.visible = true;
+			//box2D.visible = true;
 			add(box2D);
+
+			CitrusEngine.getInstance().state = this;
 			
             var bitmapView:Bitmap = new tileView();    
             bitmapView.name = "tileset.png";    
-
+			
             ObjectMaker2D.FromTiledMap(XML(new tileMap()), [bitmapView]);     
 			
 			var jibbly:Jibbly = getObjectByName("jibbly") as Jibbly; 

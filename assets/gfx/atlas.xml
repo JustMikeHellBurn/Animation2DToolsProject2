@@ -7,7 +7,7 @@
 	<SubTexture name="jibblywalk3" x="96" y="270" width="49" height="43"/>
 
 
-	<SubTexture name="splashimage" x="1090" y="0" width="750" height="275"/>
+	<SubTexture name="splashimage" x="1091" y="0" width="750" height="270"/>
     <SubTexture name="bigbullet" x="0" y="200" width="12" height="12"/>
     <SubTexture name="bigexplosion01" x="396" y="69" width="128" height="128"/>
     <SubTexture name="bigexplosion02" x="266" y="69" width="128" height="128"/>

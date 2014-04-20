@@ -6,12 +6,13 @@
 	import starling.textures.TextureAtlas;
 	import flash.media.Sound;
 	import flash.media.SoundTransform;
+	import objects.Jibbly;
 	
 	public class Assets {
 
 		// Embed the MailPilot Texture Atlas
 		[Embed(source="assets/gfx/atlas.png")]
-		private static var atlas:Class;
+		private static var atlasBitmap:Class;
 		
 		public static var mpAtlas:TextureAtlas;
 		
@@ -30,13 +31,17 @@
 		public static var menuTheme:Class;
 		public static var menuSound:Sound;
 		
+		[Embed(source="assets/sfx/splashtheme.mp3")]
+		public static var splashTheme:Class;
+		public static var splashSound:Sound;
 		
 		// Alien Animation Graphics
 		[Embed(source="assets/gfx/jibblyAtlas.xml", mimeType="application/octet-stream")]
 		private static var jibblyXML:Class;
 		
 		[Embed(source="assets/gfx/jibbly.png")] 
-		private static var jibbly:Class;
+		private static var jibblyBitmap:Class;
+		
 		public static var jibblyAtlas:TextureAtlas;
 		
 		
@@ -44,21 +49,13 @@
 		//public static var JIBBLY_IDLE:Class;
 		
 		public static function init():void {
-			mpAtlas = new TextureAtlas(Texture.fromBitmap(new atlas()),
-				XML(new atlasXML()));
-				
-			jibblyAtlas = new TextureAtlas(Texture.fromBitmap(new jibbly()),
-				XML(new jibblyXML()));
-				
-			playSound = new playTheme();
-			playSound.play(0,0, new SoundTransform(0));
-		
-			instructionSound = new instructionsTheme();
-			instructionSound.play(0,0, new SoundTransform(0));
+
+			mpAtlas = new TextureAtlas(Texture.fromBitmap(new atlasBitmap()), XML(new atlasXML()));
+			jibblyAtlas = new TextureAtlas(Texture.fromBitmap(new jibblyBitmap()), XML(new jibblyXML()));
 			
-			menuSound = new menuTheme();
-			menuSound.play(0,0, new SoundTransform(0));
-			
+			// Load Themes
+			splashSound = new splashTheme();
+			splashSound.play(0,0, new SoundTransform(0));
 		}
 		
 	}
