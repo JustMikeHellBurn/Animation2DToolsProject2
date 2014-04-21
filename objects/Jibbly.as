@@ -11,6 +11,7 @@
 	public class Jibbly extends Hero {
 		
 		public var health:Number;
+		public var lives:int;
 		private var ce:CitrusEngine;
 		private var isShooting:Boolean;
 		private var isTelporting:Boolean;
@@ -22,7 +23,8 @@
 			super(name, params);
 			startX = x;
 			startY = y;
-			health = 100;
+			health = 3;
+			lives = 3;
 			view = new AnimationSequence(Assets.jibblyAtlas, ["walk", "idle", "jump", "fall", "hurt", "shoot", "telein", "teleout"], "walk", 15);
 			view.onAnimationComplete.add(onAnimationOver);
 			canDuck = false;
@@ -55,12 +57,14 @@
 			// Shoot Bullet
 			if (ce.input.justDid("shoot")) {
 				isShooting = true;
+				CitrusEngine.getInstance().state.add(new Bullet("bullet", {x:this.x, y:this.y, speed:4}));
 			} 
 
 			if (isShooting) {
 				_animation = "shoot";
 			}
 
+			
 			// Check if jibbly has fallen to his death (this is a hack because we are assuming all maps are the same height)
 			if (y + height > 1500) {
 				reset();
@@ -94,14 +98,17 @@
 		}
 		
 		public function reset():void {
+			// Game over!
+			if (lives == 0) CitrusEngine.getInstance().state.destroy();
 			x = startX;
 			y = startY;
-			health = 100;
+			health = 3;
+			lives -= 1;
 		}
 		
 		protected function onAnimationOver(name:String):void
 		{
-			if (name == "hurt") health -= 10;
+			if (name == "hurt") health -= 1;
 			if (health == 0) reset();
 			if (name == "shoot") isShooting = false;
 			if (name == "teleout") { 

@@ -29,7 +29,7 @@
 			Starling.juggler.add(delayedCall);
 			themeChannel = Assets.splashSound.play(0, 1, new SoundTransform(0.25));
 			
-			this.nextState = new EndState();
+			this.nextState = new PlayState();
 			
 		}
 		
