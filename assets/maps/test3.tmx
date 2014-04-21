@@ -51,11 +51,6 @@
     <property name="oneWay" value="true"/>
    </properties>
   </object>
-  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1664" y="448" width="128" height="64">
-   <properties>
-    <property name="oneWay" value="true"/>
-   </properties>
-  </object>
   <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="2048" y="704" width="192" height="64">
    <properties>
     <property name="oneWay" value="true"/>
@@ -144,5 +139,6 @@
     <property name="startY" value="192"/>
    </properties>
   </object>
+  <object name="coin" type="citrus.objects.platformer.box2d.Coin" x="448" y="576" width="32" height="32"/>
  </objectgroup>
 </map>

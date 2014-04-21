@@ -38,8 +38,11 @@
 			// Make animations loop
 			StarlingArt.setLoopAnimations(["idle", "jump", "walk", "fall"]);
 			
+			import citrus.objects.platformer.box2d.Coin;
+			
 			// Add physics (box2D) to the game
 			var box2D:Box2D = new Box2D("box2D");
+			box2D.visible = true;
 			add(box2D);
 
 			// Load Map, and its objects
@@ -51,7 +54,7 @@
             ObjectMaker2D.FromTiledMap(map, [bitmapView]);   
 			
 			var movingPlatforms:MovingPlatform = getObjectByName("movingPlatform") as MovingPlatform;
-			
+			var coin:Coin = getObjectByName("coin") as Coin;
 			
 			// Set jibbly as center focus
 			var jibbly:Jibbly = getObjectByName("jibbly") as Jibbly;
