@@ -4,9 +4,10 @@
 	import flash.media.SoundChannel;
 	import flash.media.SoundTransform;
 	import flash.display.Bitmap; 
+	import flash.geom.Rectangle;
 	
 	// Object Imports
-	import objects.SplashImage;
+	import objects.Jibbly;
 	
 	// Starling Imports
 	import starling.events.Event;
@@ -16,7 +17,7 @@
 	import citrus.utils.objectmakers.ObjectMaker2D;   
 	import citrus.core.CitrusEngine;
 	import citrus.input.controllers.Keyboard;
-	
+
 	public class MenuState extends BaseState {
 
 		private var themeChannel:SoundChannel;
@@ -36,7 +37,11 @@
 			// Load Map, and its objects
             var bitmapView:Bitmap = new Assets.TILESET();
             bitmapView.name = "tileset.png";    
-            ObjectMaker2D.FromTiledMap(XML(new Assets.MENU_MAP()), [bitmapView]);   
+			var map:XML = XML(new Assets.MENU_MAP());
+            ObjectMaker2D.FromTiledMap(map, [bitmapView]);  
+			// Set jibbly as center focus
+			var jibbly:Jibbly = getObjectByName("jibbly") as Jibbly;
+			view.camera.setUp(jibbly, new Rectangle(0, 0, map.@width * map.@tilewidth, map.@height * map.@tileheight));
 			
 			// Play Instruction Theme
 			themeChannel = Assets.menuSound.play(0, 0, new SoundTransform(0.25));

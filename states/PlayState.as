@@ -19,7 +19,6 @@
 	import citrus.core.CitrusEngine;
 	import citrus.input.controllers.Keyboard;
 	import citrus.objects.platformer.box2d.MovingPlatform;
-	import citrus.view.starlingview.StarlingArt;
 	import citrus.core.starling.StarlingState;
 
 	
@@ -34,9 +33,6 @@
 
 		override public function initialize():void {
     		super.initialize();
-
-			// Make animations loop
-			StarlingArt.setLoopAnimations(["idle", "jump", "walk", "fall"]);
 			
 			import citrus.objects.platformer.box2d.Coin;
 			

@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="15" height="15" tilewidth="64" tileheight="64">
- <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
-  <image source="assets/gfx/tileset.png" width="1218" height="386"/>
+<map version="1.0" orientation="orthogonal" width="15" height="15" tilewidth="63" tileheight="63">
+ <tileset firstgid="1" name="tileset" tilewidth="63" tileheight="63">
+  <image source="../gfx/tileset.png" width="1134" height="315"/>
  </tileset>
  <layer name="Tile Layer 1" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJyd0bkKwkAQBuAUHqU2GzeFuWw8Oo9O8D46je//MP6Bf2AYNgmk+GDnIhMmj6JoDjkVJl501FOYgYOYcf32kKg4YV/KudL0Osax6fXMecYld5BZ19Jr9yr4P5n6jjdxwljvlXHuDBe4whZ2DTnZX9ducIcH7OHQkJMddO0JL3jDkkK5UC0P1LvIfcses/pGfWblRrY2CeSm6i03WsEaNsaRToGaGMAQRsYHvlAFarVxy2xFv5bZP4I4IBQ=
+   eJylkVkLwjAQhOv56Euq9Yi2BbXVejx56///W05gAsuyBcGHjySzO5sMqZIkqcEO7EFjnKsWLawLkIIxmICMq6XHc5zjle6498Ij/Y6+mj3OuMOLXl1reLdvebPUZdYDODLz0pjvqOucQT+BMyjEnAu4gpvQUvZnYk4gBysx5w4e4KlmlyqToy/UOuQF3uAjtEjJ3ugv6dd9FlP1f/E9v3hnIm/BvHlL70id5yJnfO9Gsea6BT36ukY9MFQMxF7e2zfq/3i/br4UKA==
   </data>
  </layer>
+ <objectgroup name="citrus" width="15" height="15">
+  <object name="jibbly" type="objects.Jibbly" x="129" y="595" width="47" height="41">
+   <properties>
+    <property name="acceleration" value="4"/>
+    <property name="maxVelocity" value="4"/>
+   </properties>
+  </object>
+  <object name="wall" type="citrus.objects.platformer.box2d.Platform" x="0" y="0" width="61" height="754"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="0" y="755" width="439" height="73"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="631" y="756" width="125" height="71"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="756" y="693" width="63" height="61"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="819" y="630" width="62" height="62"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="882" y="0" width="62" height="628"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="630" y="504" width="125" height="62"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="504" y="441" width="124" height="62"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="63" y="378" width="440" height="62"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="630" y="252" width="251" height="61"/>
+  <object name="wall" type="citrus.objects.platformer.box2d.Platform" x="60" y="-1" width="819" height="60"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="819" y="313" width="63" height="63"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="189" y="504" width="188" height="62"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="376" y="440" width="127" height="63"/>
+  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="63" y="439" width="125" height="64"/>
+  <object name="wall" type="citrus.objects.platformer.box2d.Platform" x="367" y="828" width="72" height="116"/>
+  <object name="wall" type="citrus.objects.platformer.box2d.Platform" x="630" y="827" width="66" height="117"/>
+ </objectgroup>
 </map>
