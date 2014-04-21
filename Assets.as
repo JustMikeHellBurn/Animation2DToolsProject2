@@ -82,7 +82,7 @@
         public static var TILESET:Class;  
 		
 		// Tmx Maps (levels, instruction, menu, and game over
-		[Embed(source="assets/maps/test3.tmx", mimeType="application/octet-stream")]    
+		[Embed(source="assets/maps/level1.tmx", mimeType="application/octet-stream")]    
         public static var LEVEL1_MAP:Class;     
 		
         [Embed(source="assets/maps/instructions.tmx", mimeType="application/octet-stream")]    
