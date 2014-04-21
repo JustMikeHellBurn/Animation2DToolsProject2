@@ -43,7 +43,6 @@
 			
 			// get the keyboard
 			ce = CitrusEngine.getInstance();
-			ce.input.keyboard.resetAllKeyActions();
 			var kb:Keyboard = ce.input.keyboard;
 			 
 			// Add continue action

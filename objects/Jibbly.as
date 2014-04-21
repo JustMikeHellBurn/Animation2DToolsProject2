@@ -7,7 +7,8 @@
 		public function Jibbly(name:String, params:Object=null) {
 			super(name, params);
 			view = new AnimationSequence(Assets.jibblyAtlas, ["walk", "idle", "jump", "fall"], "walk", 15);
-			this.canDuck = false;
+			canDuck = false;
+			_controlsEnabled = true;
 		}
 		
 		override public function update(timeDelta:Number):void {
@@ -28,7 +29,6 @@
 				_inverted = true;
 			} 
 			
-			trace("updating");
 		}
 
 	}

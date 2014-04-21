@@ -42,9 +42,12 @@
 	
 	import citrus.core.CitrusEngine;
 	import citrus.core.State;
+
+	import citrus.input.controllers.Keyboard;
 	
 	public class Game extends StarlingState
 	{
+		private var ce:CitrusEngine;
 		// Game Constants
 		public static var KEY_MAX:int = 256;
 		public static var KEY_LEFT:int = 37;
@@ -93,14 +96,18 @@
 		// ==================================
 
 		
-
+        [Embed(source="assets/maps/test3.tmx", mimeType="application/octet-stream")]    
+        private var tileMap:Class;     
+		
+        [Embed(source="assets/gfx/tileset.png")]    
+        private var tileView:Class;  
 		
 		public function Game()
 		{
 			super();
 			
 			// Set up game assets
-			Assets.init();
+			
 			
 			
 			/*
@@ -143,16 +150,15 @@
 			//box2D.visible = true;
 			add(box2D);
 
-			CitrusEngine.getInstance().state = this;
-			
             var bitmapView:Bitmap = new tileView();    
             bitmapView.name = "tileset.png";    
 			
-            ObjectMaker2D.FromTiledMap(XML(new tileMap()), [bitmapView]);     
-			
+            ObjectMaker2D.FromTiledMap(XML(new Assets.LEVEL1_MAP()), [bitmapView]);     
+			var movingPlatforms:MovingPlatform = getObjectByName("movingPlatform") as MovingPlatform;
 			var jibbly:Jibbly = getObjectByName("jibbly") as Jibbly; 
 			
 			view.camera.setUp(jibbly);
+			
 			
 			//var ball:Ball = new Ball("coin", {x:360, y:200, view:"levels/SoundPatchDemo/jewel.png"});
 /*
@@ -168,30 +174,6 @@
 			
 		}
 		
-		private function init(event:Event):void
-		{
-			// Intialize Game Objects
-			instructionTileMap = new TileMap(this, "assets/maps/instructions.tmx");
-			menuTileMap = new TileMap(this, "assets/maps/menu.tmx");
-			playTileMap = new TileMap(this, "assets/maps/test3.tmx");
-			currentTileMap = instructionTileMap;
-			
-			ball = new Ball(this);
-			
-			
-
-			
-			enemy = new Enemy("enemy",{x:900,y:700,width:78,height:132,leftBound:60,rightBound:950});
-			add(enemy);
-			
-		}
-		
-		public function reset():void {
-			// Reset keys
-			for (var i:int = 0; i < Game.KEY_MAX; ++i) {
-				keys[i] = false;
-			}
-		}
 		
 /*
 		public function update(event:Event):void {
@@ -223,24 +205,25 @@
 		
 		// Key On Down
 		protected function onKeyboardDown(event:KeyboardEvent):void {
-			this.keys[event.keyCode] = true;
+		
+		
 		}
 		
 		// Key On Up
 		protected function onKeyboardUp(event:KeyboardEvent):void {
-			this.keys[event.keyCode] = false;
+
 		}
 		
 		// Mouse On Down
 		protected function onMouseDown(event:MouseEvent):void
 		{
-			trace("down");
+		
 		}
 
 		//Mouse On Up
 		protected function onMouseUp(event:MouseEvent):void
 		{
-			trace("up");
+			
 		}
 		
 	}

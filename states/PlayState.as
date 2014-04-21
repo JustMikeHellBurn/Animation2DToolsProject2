@@ -4,6 +4,7 @@
 	import flash.media.SoundChannel;
 	import flash.media.SoundTransform;
 	import flash.display.Bitmap; 
+	import flash.geom.Rectangle;
 	
 	// Object Imports
 	import objects.SplashImage;
@@ -19,12 +20,12 @@
 	import citrus.input.controllers.Keyboard;
 	import citrus.objects.platformer.box2d.MovingPlatform;
 	import citrus.view.starlingview.StarlingArt;
-	import flash.geom.Rectangle;
+	import citrus.core.starling.StarlingState;
+
 	
-	public class PlayState extends BaseState {
+	public class PlayState extends StarlingState {
 
 		private var themeChannel:SoundChannel;
-		private var splashImage:SplashImage;
 		private var ce:CitrusEngine;
 		
 		public function PlayState() {
@@ -33,7 +34,7 @@
 
 		override public function initialize():void {
     		super.initialize();
-			
+
 			// Make animations loop
 			StarlingArt.setLoopAnimations(["idle", "jump", "walk", "fall"]);
 			
@@ -61,12 +62,10 @@
 			
 			// get the keyboard
 			ce = CitrusEngine.getInstance();
-			ce.input.keyboard.resetAllKeyActions();
 			var kb:Keyboard = ce.input.keyboard;
-			 
 
 		}
-		
+		/*
 		override public function destroy():void {
 			super.destroy();
 			// Stop Theme
@@ -78,7 +77,7 @@
 			super.update(timeDelta);
 	
 		}
-		
+		*/
 	}
 	
 }
