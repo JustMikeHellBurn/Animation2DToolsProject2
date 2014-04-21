@@ -52,6 +52,14 @@
 			var jibbly:Jibbly = getObjectByName("jibbly") as Jibbly;
 			view.camera.setUp(jibbly, new Rectangle(0, 0, map.@width * map.@tilewidth, map.@height * map.@tileheight));
  
+ 			// Add instruction text
+			var instructionText:TextField = new TextField(750, 100, "Use arrow keys to move. Z to shoot, T to go through\n portals, Space to Jump. Good Luck Jibbly!");
+			instructionText.x = 25;
+			instructionText.y = 25;
+			instructionText.fontName = "jibblyFont";
+			instructionText.fontSize = 32;
+			instructionText.color = Color.WHITE;
+			addChild(instructionText);
  			// Add Portals
 			var portal:Portal = getObjectByName("portal") as Portal;
 			
