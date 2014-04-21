@@ -9,18 +9,20 @@
 		//private var health:Number;
 		private var ce:CitrusEngine;
 		private var isShooting:Boolean;
+		private var isTeleporting:Boolean;
 		
 		public function Jibbly(name:String, params:Object=null) {
 			super(name, params);
-			view = new AnimationSequence(Assets.jibblyAtlas, ["walk", "idle", "jump", "fall", "hurt", "shoot"], "walk", 15);
+			view = new AnimationSequence(Assets.jibblyAtlas, ["walk", "idle", "jump", "fall", "hurt", "shoot", "telein", "teleout"], "walk", 15);
 			view.onAnimationComplete.add(onAnimationOver);
 			canDuck = false;
 			isShooting = false;
+			isTeleporting = false;
 			// Set Keyboard Actions
 			ce = CitrusEngine.getInstance();
 			var kb:Keyboard = ce.input.keyboard;
 			kb.addKeyAction("shoot", Keyboard.Z);
-			
+			kb.addKeyAction("tele", Keyboard.T);
 		}
 		
 		override public function update(timeDelta:Number):void {
@@ -44,6 +46,13 @@
 			// Shoot Bullet
 			if (ce.input.justDid("shoot")) {
 				isShooting = true;
+			} 
+			if (ce.input.justDid("tele")) {
+				isTeleporting = true;
+			}
+			
+			if (isTeleporting) {
+				_animation = "teleout";
 			}
 			
 			if (isShooting) {
@@ -55,6 +64,7 @@
 		protected function onAnimationOver(name:String):void
 		{
 			if (name == "shoot") isShooting = false;
+			if (name == "teleout") isTeleporting = false;
 		}
 
 	}
