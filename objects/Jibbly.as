@@ -28,6 +28,7 @@
 				_inverted = true;
 			} 
 			
+			trace("updating");
 		}
 
 	}

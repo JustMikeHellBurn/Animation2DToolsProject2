@@ -61,7 +61,6 @@
         [Embed(source="assets/maps/gameover.tmx", mimeType="application/octet-stream")]    
         public static var GAMEOVER_MAP:Class;     
 		
-
 		public static function init():void {
 
 			mpAtlas = new TextureAtlas(Texture.fromBitmap(new atlasBitmap()), XML(new atlasXML()));
@@ -73,6 +72,12 @@
 			
 			instructionSound = new instructionsTheme();
 			instructionSound.play(0,0, new SoundTransform(0));
+			
+			menuSound = new menuTheme();
+			menuSound.play(0,0, new SoundTransform(0));
+			
+			playSound = new playTheme();
+			playSound.play(0,0, new SoundTransform(0));
 			
 		}
 		

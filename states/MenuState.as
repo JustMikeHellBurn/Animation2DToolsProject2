@@ -17,10 +17,9 @@
 	import citrus.core.CitrusEngine;
 	import citrus.input.controllers.Keyboard;
 	
-	public class PlayState extends BaseState {
+	public class MenuState extends BaseState {
 
 		private var themeChannel:SoundChannel;
-		private var splashImage:SplashImage;
 		private var ce:CitrusEngine;
 		
 		public function MenuState() {
@@ -40,7 +39,7 @@
             ObjectMaker2D.FromTiledMap(XML(new Assets.MENU_MAP()), [bitmapView]);   
 			
 			// Play Instruction Theme
-			themeChannel = Assets.instructionSound.play(0, 0, new SoundTransform(0.25));
+			themeChannel = Assets.menuSound.play(0, 0, new SoundTransform(0.25));
 			
 			// get the keyboard
 			ce = CitrusEngine.getInstance();
@@ -56,7 +55,7 @@
 			super.destroy();
 			// Stop Theme
 			themeChannel.stop();
-			CitrusEngine.getInstance().state = new SplashState();
+			CitrusEngine.getInstance().state = new PlayState();
 		}
 		
 		override public function update(timeDelta:Number):void {

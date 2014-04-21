@@ -20,7 +20,6 @@
 	public class InstructionState extends BaseState {
 
 		private var themeChannel:SoundChannel;
-		private var splashImage:SplashImage;
 		private var ce:CitrusEngine;
 		
 		public function InstructionState() {
@@ -56,7 +55,7 @@
 			super.destroy();
 			// Stop Theme
 			themeChannel.stop();
-			CitrusEngine.getInstance().state = new SplashState();
+			CitrusEngine.getInstance().state = new MenuState();
 		}
 		
 		override public function update(timeDelta:Number):void {
