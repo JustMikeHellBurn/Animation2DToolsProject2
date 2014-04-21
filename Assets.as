@@ -67,8 +67,8 @@
         [Embed(source="assets/maps/menu.tmx", mimeType="application/octet-stream")]    
         public static var MENU_MAP:Class;     
 		
-        [Embed(source="assets/maps/gameover.tmx", mimeType="application/octet-stream")]    
-        public static var GAMEOVER_MAP:Class;     
+        [Embed(source="assets/maps/end.tmx", mimeType="application/octet-stream")]    
+        public static var END_MAP:Class;     
 		
 		public static function init():void {
 
