@@ -9,6 +9,7 @@
 	// Object Imports
 	import objects.Jibbly;
 	import objects.FloatingText;
+	import objects.Portal;
 	
 	// Starling Imports
 	import starling.events.Event;
@@ -36,7 +37,7 @@
     		super.initialize();
 			
 			// Make animations loop
-			StarlingArt.setLoopAnimations(["idle", "jump", "walk", "fall"]);
+			StarlingArt.setLoopAnimations(["idle", "jump", "walk", "fall", "portal"]);
 			
 			// Add physics (box2D) to the game
 			var box2D:Box2D = new Box2D("box2D");
@@ -51,6 +52,9 @@
 			var jibbly:Jibbly = getObjectByName("jibbly") as Jibbly;
 			view.camera.setUp(jibbly, new Rectangle(0, 0, map.@width * map.@tilewidth, map.@height * map.@tileheight));
  
+ 			// Add Portals
+			var portal:Portal = getObjectByName("portal") as Portal;
+			
  			// Add instruction texts
 			/*
 			var moveText:FloatingText = new FloatingText(30, 30, "Use");
@@ -69,20 +73,17 @@
 			// Add continue action
 			//kb.addKeyAction("space", Keyboard.SPACE);
 
+			this.nextState = new MenuState();
 		}
 		
 		override public function destroy():void {
 			super.destroy();
 			// Stop Theme
 			themeChannel.stop();
-			CitrusEngine.getInstance().state = new MenuState();
 		}
 		
 		override public function update(timeDelta:Number):void {
 			super.update(timeDelta);
-			
-			if (ce.input.justDid("space"))
-				destroy();
 	
 		}
 		

@@ -28,15 +28,15 @@
 			delayedCall.repeatCount = 1;
 			Starling.juggler.add(delayedCall);
 			themeChannel = Assets.splashSound.play(0, 1, new SoundTransform(0.25));
+			
+			this.nextState = new InstructionState();
+			
 		}
 		
 		override public function destroy():void {
 			super.destroy();
 			// Stop Splash Theme
 			themeChannel.stop();
-			// Go to instructions state
-			//CitrusEngine.getInstance().state = new InstructionState();
-			CitrusEngine.getInstance().state = new MenuState();
 		}
 		
 		private function splashDelay():void {

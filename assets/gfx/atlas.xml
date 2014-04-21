@@ -147,4 +147,9 @@
 	<SubTexture name="playtext" x="1092" y="275" width="72" height="20"/>
 	<SubTexture name="exittext" x="1091" y="299" width="66" height="20"/>
 	
+	<SubTexture name="portal1" x="12" y="241" width="123" height="123"/>
+	<SubTexture name="portal2" x="205" y="241" width="123" height="123"/>
+	<SubTexture name="portal3" x="398" y="241" width="123" height="123"/>
+	<SubTexture name="portal3" x="590" y="241" width="123" height="123"/>
+	
 </TextureAtlas>

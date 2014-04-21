@@ -3,9 +3,13 @@
  <tileset firstgid="1" name="tileset" tilewidth="63" tileheight="63">
   <image source="../gfx/tileset.png" width="1134" height="315"/>
  </tileset>
+ <objectgroup name="portals" width="15" height="15">
+  <object name="playPortal" type="objects.PlayPortal" x="406" y="627" width="126" height="126"/>
+  <object name="exitPortal" type="objects.ExitPortal" x="728" y="628" width="126" height="126"/>
+ </objectgroup>
  <objectgroup name="textlayer" width="15" height="15">
-  <object name="playText" type="objects.PlayText" x="407" y="583" width="69" height="32"/>
-  <object name="exitText" type="objects.ExitText" x="719" y="584" width="69" height="32"/>
+  <object name="playText" type="objects.PlayText" x="436" y="583" width="69" height="32"/>
+  <object name="exitText" type="objects.ExitText" x="756" y="581" width="69" height="32"/>
  </objectgroup>
  <layer name="Tile Layer 1" width="15" height="15">
   <data encoding="base64" compression="zlib">

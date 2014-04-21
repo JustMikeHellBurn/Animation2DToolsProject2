@@ -6,6 +6,8 @@
 		public function PlayText(name:String, params:Object=null) {
 			super(name, params);
 			view = Assets.mpAtlas.getTexture("playtext");
+			x -= view.width / 2;
+			y -= view.height / 2;
 		}
 
 	}

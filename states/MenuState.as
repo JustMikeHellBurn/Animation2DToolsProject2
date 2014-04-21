@@ -10,6 +10,8 @@
 	import objects.Jibbly;
 	import objects.PlayText;
 	import objects.ExitText;
+	import objects.PlayPortal;
+	import objects.ExitPortal;
 	
 	// Starling Imports
 	import starling.events.Event;
@@ -34,7 +36,7 @@
     		super.initialize();
 			
 			// Make animations loop
-			StarlingArt.setLoopAnimations(["idle", "jump", "walk", "fall"]);
+			StarlingArt.setLoopAnimations(["idle", "jump", "walk", "fall", "portal"]);
 			
 			// Add physics (box2D) to the game
 			var box2D:Box2D = new Box2D("box2D");
@@ -53,6 +55,9 @@
 			var playText:PlayText = getObjectByName("playText") as PlayText;
 			var exitText:ExitText = getObjectByName("exitText") as ExitText;
 
+			var playPortal:PlayPortal = getObjectByName("playportal") as PlayPortal;
+			var exitPortal:ExitPortal = getObjectByName("exitportal") as ExitPortal;
+
 			// Play Instruction Theme
 			themeChannel = Assets.menuSound.play(0, 0, new SoundTransform(0.25));
 			
@@ -60,6 +65,7 @@
 			ce = CitrusEngine.getInstance();
 			var kb:Keyboard = ce.input.keyboard;
 			 
+			this.nextState = new PlayState();
 
 		}
 		
@@ -67,7 +73,6 @@
 			super.destroy();
 			// Stop Theme
 			themeChannel.stop();
-			CitrusEngine.getInstance().state = new PlayState();
 		}
 		
 		override public function update(timeDelta:Number):void {

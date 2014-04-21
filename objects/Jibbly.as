@@ -3,13 +3,17 @@
 	import citrus.view.starlingview.AnimationSequence;
 	import citrus.core.CitrusEngine;
 	import citrus.input.controllers.Keyboard;
+	import citrus.objects.CitrusSprite;
+	import states.PlayState;
+	import states.BaseState;
+	
 	
 	public class Jibbly extends Hero {
 		
 		//private var health:Number;
 		private var ce:CitrusEngine;
 		private var isShooting:Boolean;
-		private var isTeleporting:Boolean;
+		private var isTelporting:Boolean;
 		
 		public function Jibbly(name:String, params:Object=null) {
 			super(name, params);
@@ -17,7 +21,6 @@
 			view.onAnimationComplete.add(onAnimationOver);
 			canDuck = false;
 			isShooting = false;
-			isTeleporting = false;
 			// Set Keyboard Actions
 			ce = CitrusEngine.getInstance();
 			var kb:Keyboard = ce.input.keyboard;
@@ -47,16 +50,34 @@
 			if (ce.input.justDid("shoot")) {
 				isShooting = true;
 			} 
-			if (ce.input.justDid("tele")) {
-				isTeleporting = true;
-			}
-			
-			if (isTeleporting) {
-				_animation = "teleout";
-			}
-			
+
 			if (isShooting) {
 				_animation = "shoot";
+			}
+
+			// Check if going through portals
+			var portal:Portal = CitrusEngine.getInstance().state.getObjectByName("portal") as Portal;
+			var playPortal:PlayPortal = CitrusEngine.getInstance().state.getObjectByName("playPortal") as PlayPortal;
+			var exitPortal:ExitPortal = CitrusEngine.getInstance().state.getObjectByName("exitPortal") as ExitPortal;
+			
+			// Not efficient, but I'm really bloody tired right now...so I don't care.
+			if (portal != null && x + width > portal.x && y + height > portal.y && x < portal.x + portal.width && y < portal.y + portal.height && ce.input.justDid("tele")) {
+				isTelporting = true;
+				_controlsEnabled = false;
+			}
+			if (playPortal != null && x + width > playPortal.x && y + height > playPortal.y && x < playPortal.x + playPortal.width && y < playPortal.y + playPortal.height && ce.input.justDid("tele")) {
+				isTelporting = true;
+				_controlsEnabled = false;
+				(CitrusEngine.getInstance().state as BaseState).nextState = new PlayState();
+			}
+			if (exitPortal != null && x + width > exitPortal.x && y + height > exitPortal.y && x < exitPortal.x + exitPortal.width && y < exitPortal.y + exitPortal.height && ce.input.justDid("tele")) {
+				isTelporting = true;
+				_controlsEnabled = false;
+				(CitrusEngine.getInstance().state as BaseState).nextState = null;
+			}
+			
+			if (isTelporting) {
+				_animation = "teleout";
 			}
 			
 		}
@@ -64,9 +85,13 @@
 		protected function onAnimationOver(name:String):void
 		{
 			if (name == "shoot") isShooting = false;
-			if (name == "teleout") isTeleporting = false;
+			if (name == "teleout") { 
+				isTelporting = false;
+				_controlsEnabled = true;
+				CitrusEngine.getInstance().state.destroy();
+			}
 		}
-
+		
 	}
 	
 }

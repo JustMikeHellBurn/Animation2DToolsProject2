@@ -22,7 +22,7 @@
 	import citrus.core.starling.StarlingState;
 
 	
-	public class PlayState extends StarlingState {
+	public class PlayState extends BaseState {
 
 		private var themeChannel:SoundChannel;
 		private var ce:CitrusEngine;

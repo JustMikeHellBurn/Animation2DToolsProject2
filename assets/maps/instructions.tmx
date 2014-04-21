@@ -8,6 +8,9 @@
    eJylkVkLwjAQhOv56Euq9Yi2BbXVejx56///W05gAsuyBcGHjySzO5sMqZIkqcEO7EFjnKsWLawLkIIxmICMq6XHc5zjle6498Ij/Y6+mj3OuMOLXl1reLdvebPUZdYDODLz0pjvqOucQT+BMyjEnAu4gpvQUvZnYk4gBysx5w4e4KlmlyqToy/UOuQF3uAjtEjJ3ugv6dd9FlP1f/E9v3hnIm/BvHlL70id5yJnfO9Gsea6BT36ukY9MFQMxF7e2zfq/3i/br4UKA==
   </data>
  </layer>
+ <objectgroup name="portals" width="15" height="15">
+  <object name="portal" type="objects.Portal" x="233" y="247" width="126" height="126"/>
+ </objectgroup>
  <objectgroup name="citrus" width="15" height="15">
   <object name="jibbly" type="objects.Jibbly" x="129" y="595" width="47" height="41">
    <properties>
