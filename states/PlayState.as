@@ -26,6 +26,8 @@
 	import citrus.objects.platformer.box2d.Coin;
 	import citrus.view.starlingview.StarlingArt;
 	import objects.JibblyCoin;
+	import objects.JibblyEnemy;
+	import objects.JibblyMovingPlatform;
 	
 	public class PlayState extends BaseState {
 
@@ -50,7 +52,6 @@
 			
 			// Add physics (box2D) to the game
 			var box2D:Box2D = new Box2D("box2D");
-			box2D.visible = true;
 			add(box2D);
 
 			// Load Map, and its objects
@@ -61,8 +62,9 @@
 			
             ObjectMaker2D.FromTiledMap(map, [bitmapView]);   
 			
-			var movingPlatforms:MovingPlatform = getObjectByName("movingPlatform") as MovingPlatform;
-			var coin:Coin = getObjectByName("coin") as JibblyCoin;
+			var movingPlatforms:JibblyMovingPlatform = getObjectByName("movingPlatform") as JibblyMovingPlatform;
+			var coin:JibblyCoin = getObjectByName("coin") as JibblyCoin;
+			var enemy:JibblyEnemy = getObjectByName("coin") as JibblyEnemy;
 			
 			// Put text fields 
 			score = new TextField(200, 32, "Score: 0");
