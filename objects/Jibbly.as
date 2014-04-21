@@ -112,19 +112,18 @@
 			
 			if (isTelporting) {
 				_animation = "teleout";
-
 			}
 			
 		}
 		
 		public function reset():void {
 			// Game over!
-			if (lives == 0) CitrusEngine.getInstance().state.destroy();
 			x = startX;
 			y = startY;
 			health = 3;
 			lives -= 1;
 			gotHit = false;
+			if (lives == 0) CitrusEngine.getInstance().state.destroy();
 		}
 		
 		protected function onAnimationOver(name:String):void

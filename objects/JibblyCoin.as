@@ -6,13 +6,12 @@
 
 		public function JibblyCoin(name:String, params:Object=null) {
 			super(name, params);
-			trace("DSF");
 		}
 
 		override public function handleBeginContact(contact:b2Contact):void
 		{
 			super.handleBeginContact(contact);
-			trace("contact");
+			Assets.coinSound.play();
 		}
 		
 	}
