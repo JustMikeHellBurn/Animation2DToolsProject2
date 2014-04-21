@@ -33,6 +33,7 @@
 		
 		public var score:TextField;
 		public var health:TextField;
+		public var lives:TextField;
 		public var scoreCounter:int;
 		
 		public function PlayState() {
@@ -64,7 +65,8 @@
 			
 			// Put text fields 
 			score = new TextField(200, 32, "Score: 0");
-			health = new TextField(200, 32, "Health: 0");
+			health = new TextField(200, 32, "Health: 3");
+			lives = new TextField(200, 32, "Lives: 3");
 			
 			health.x = 10;
 			health.y = 10;
@@ -76,6 +78,14 @@
 			health.fontSize = 32;
 			score.color = Color.WHITE;
 			health.color = Color.WHITE;
+			
+			lives.x = 250;
+			lives.y = 10;
+			lives.fontName = "jibblyFont";
+			lives.fontSize = 32;
+			lives.color = Color.WHITE;
+			
+			addChild(lives);
 			addChild(score);
 			addChild(health);
 			
@@ -109,7 +119,7 @@
 			
 			score.text =  "Score: " + scoreCounter;
 			health.text = "Health: " + jibbly.health;
-			
+			lives.text = "Lives: " + jibbly.lives;
 		}
 	
 	}

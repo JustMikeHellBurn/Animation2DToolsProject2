@@ -72,7 +72,7 @@
 			*/
 			
 			// Play Instruction Theme
-			themeChannel = Assets.menuSound.play(0, 0, new SoundTransform(0.25));
+			themeChannel = Assets.instructionSound.play(0, -1, new SoundTransform(0.25));
 			
 			// get the keyboard
 			ce = CitrusEngine.getInstance();

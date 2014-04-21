@@ -44,6 +44,26 @@
 		public static var splashTheme:Class;
 		public static var splashSound:Sound;
 		
+		[Embed(source="assets/sfx/jump.mp3")]
+		public static var jumpSFX:Class;
+		public static var jumpSound:Sound;
+		
+		[Embed(source="assets/sfx/shoot.mp3")]
+		public static var shootSFX:Class;
+		public static var shootSound:Sound;
+		
+		[Embed(source="assets/sfx/teleport.mp3")]
+		public static var teleportSFX:Class;
+		public static var teleportSound:Sound;
+		
+		[Embed(source="assets/sfx/hurt.mp3")]
+		public static var hurtSFX:Class;
+		public static var hurtSound:Sound;
+		
+		[Embed(source="assets/sfx/coin.mp3")]
+		public static var coinSFX:Class;
+		public static var coinSound:Sound;
+		
 		// Alien Animation Graphics
 		[Embed(source="assets/gfx/jibblyAtlas.xml", mimeType="application/octet-stream")]
 		private static var jibblyXML:Class;
@@ -87,6 +107,24 @@
 			
 			playSound = new playTheme();
 			playSound.play(0,0, new SoundTransform(0));
+			
+			jumpSound = new jumpSFX();
+			jumpSound.play(0,0, new SoundTransform(0));
+			
+			jumpSound = new jumpSFX();
+			jumpSound.play(0,0, new SoundTransform(0));
+			
+			shootSound = new shootSFX();
+			shootSound.play(0,0, new SoundTransform(0));
+			
+			teleportSound = new teleportSFX();
+			teleportSound.play(0,0, new SoundTransform(0));
+			
+			hurtSound = new hurtSFX();
+			hurtSound.play(0,0, new SoundTransform(0));
+			
+			coinSound = new coinSFX();
+			coinSound.play(0,0, new SoundTransform(0));
 			
 			// Load Fonts
 			TextField.registerBitmapFont(new BitmapFont(Texture.fromBitmap(new jibblyFont()),
