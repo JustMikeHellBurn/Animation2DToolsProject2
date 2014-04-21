@@ -25,6 +25,7 @@
 	import citrus.objects.platformer.box2d.Enemy;
 	import citrus.objects.platformer.box2d.Coin;
 	import citrus.view.starlingview.StarlingArt;
+	import objects.JibblyCoin;
 	
 	public class PlayState extends BaseState {
 
@@ -61,7 +62,7 @@
             ObjectMaker2D.FromTiledMap(map, [bitmapView]);   
 			
 			var movingPlatforms:MovingPlatform = getObjectByName("movingPlatform") as MovingPlatform;
-			var coin:Coin = getObjectByName("coin") as Coin;
+			var coin:Coin = getObjectByName("coin") as JibblyCoin;
 			
 			// Put text fields 
 			score = new TextField(200, 32, "Score: 0");
@@ -94,7 +95,7 @@
 			view.camera.setUp(jibbly, new Rectangle(0, 0, map.@width * map.@tilewidth, map.@height * map.@tileheight));
 			
 			// Play Instruction Theme
-			themeChannel = Assets.playSound.play(0, 0, new SoundTransform(0.25));
+			themeChannel = Assets.playSound.play(0, int.MAX_VALUE, new SoundTransform(0.25));
 			
 			// get the keyboard
 			ce = CitrusEngine.getInstance();

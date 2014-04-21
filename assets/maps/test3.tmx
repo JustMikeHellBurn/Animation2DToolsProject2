@@ -133,23 +133,23 @@
     <property name="startY" value="192"/>
    </properties>
   </object>
-  <object name="coin" type="citrus.objects.platformer.box2d.Coin" x="584" y="706" width="32" height="32"/>
+  <object name="coin" type="objects.JibblyCoin" x="584" y="706" width="32" height="32"/>
   <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="1638" y="441" width="124" height="62"/>
   <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3718" y="568" width="60" height="62"/>
   <object name="wall" type="citrus.objects.platformer.box2d.Platform" x="3969" y="0" width="61" height="944"/>
   <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3843" y="630" width="126" height="63"/>
-  <object name="coin" type="citrus.objects.platformer.box2d.Coin" x="1338" y="716" width="32" height="32"/>
-  <object name="coin" type="citrus.objects.platformer.box2d.Coin" x="3843" y="567" width="32" height="32"/>
-  <object name="coin" type="citrus.objects.platformer.box2d.Coin" x="3906" y="567" width="32" height="32"/>
-  <object name="coin" type="citrus.objects.platformer.box2d.Coin" x="3276" y="703" width="32" height="32"/>
-  <object name="coin" type="citrus.objects.platformer.box2d.Coin" x="3368" y="700" width="32" height="32"/>
-  <object name="coin" type="citrus.objects.platformer.box2d.Coin" x="3170" y="328" width="32" height="32"/>
-  <object name="coin" type="citrus.objects.platformer.box2d.Coin" x="3473" y="328" width="32" height="32"/>
-  <object name="coin" type="citrus.objects.platformer.box2d.Coin" x="1283" y="265" width="32" height="32"/>
-  <object name="coin" type="citrus.objects.platformer.box2d.Coin" x="630" y="252" width="32" height="32"/>
-  <object name="coin" type="citrus.objects.platformer.box2d.Coin" x="3788" y="148" width="32" height="32"/>
-  <object name="coin" type="citrus.objects.platformer.box2d.Coin" x="2520" y="567" width="32" height="32"/>
-  <object name="coin" type="citrus.objects.platformer.box2d.Coin" x="2151" y="453" width="32" height="32"/>
+  <object name="coin" type="objects.JibblyCoin" x="1332" y="651" width="32" height="32"/>
+  <object name="coin" type="objects.JibblyCoin" x="3843" y="567" width="32" height="32"/>
+  <object name="coin" type="objects.JibblyCoin" x="3906" y="567" width="32" height="32"/>
+  <object name="coin" type="objects.JibblyCoin" x="3276" y="703" width="32" height="32"/>
+  <object name="coin" type="objects.JibblyCoin" x="3368" y="700" width="32" height="32"/>
+  <object name="coin" type="objects.JibblyCoin" x="3170" y="328" width="32" height="32"/>
+  <object name="coin" type="objects.JibblyCoin" x="3473" y="328" width="32" height="32"/>
+  <object name="coin" type="objects.JibblyCoin" x="1283" y="265" width="32" height="32"/>
+  <object name="coin" type="objects.JibblyCoin" x="646" y="263" width="32" height="32"/>
+  <object name="coin" type="objects.JibblyCoin" x="3788" y="148" width="32" height="32"/>
+  <object name="coin" type="objects.JibblyCoin" x="2540" y="579" width="32" height="32"/>
+  <object name="coin" type="objects.JibblyCoin" x="2151" y="453" width="32" height="32"/>
   <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3726" y="10">
    <polygon points="0,0 234,235 233,0"/>
   </object>
