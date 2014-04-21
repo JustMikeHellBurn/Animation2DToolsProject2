@@ -77,10 +77,9 @@
 		
 		override public function update(timeDelta:Number):void {
 			super.update(timeDelta);
-			
-			if (ce.input.justDid("space"))
-				destroy();
-	
+			// Jibbly can't die here, give him > 0 lives
+			var jibbly:Jibbly = getObjectByName("jibbly") as Jibbly;
+			jibbly.lives = 3;
 		}
 		
 	}

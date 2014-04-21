@@ -10,7 +10,7 @@
 	import flash.media.SoundTransform;
 	
 	public class SplashState extends BaseState {
-		public static var SPLASH_DELAY:Number = 1.0;
+		public static var SPLASH_DELAY:Number = 5.0;
 		
 		private var themeChannel:SoundChannel;
 		private var delayedCall:DelayedCall;
@@ -29,7 +29,7 @@
 			Starling.juggler.add(delayedCall);
 			themeChannel = Assets.splashSound.play(0, 1, new SoundTransform(0.25));
 			
-			this.nextState = new PlayState();
+			this.nextState = new InstructionState();
 			
 		}
 		

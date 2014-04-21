@@ -92,7 +92,7 @@
 			// Add continue action
 			kb.addKeyAction("continue", Keyboard.ENTER);
 
-			this.nextState = new SplashState();
+			this.nextState = new MenuState();
 		}
 		
 		override public function destroy():void {
