@@ -64,6 +64,10 @@
 		public static var coinSFX:Class;
 		public static var coinSound:Sound;
 		
+		[Embed(source="assets/sfx/enemyhurt.mp3")]
+		public static var enemyHurtSFX:Class;
+		public static var enemyHurtSound:Sound;
+		
 		// Alien Animation Graphics
 		[Embed(source="assets/gfx/jibblyAtlas.xml", mimeType="application/octet-stream")]
 		private static var jibblyXML:Class;
@@ -125,6 +129,9 @@
 			
 			coinSound = new coinSFX();
 			coinSound.play(0,0, new SoundTransform(0));
+			
+			enemyHurtSound = new enemyHurtSFX();
+			enemyHurtSound.play(0,0, new SoundTransform(0));
 			
 			// Load Fonts
 			TextField.registerBitmapFont(new BitmapFont(Texture.fromBitmap(new jibblyFont()),

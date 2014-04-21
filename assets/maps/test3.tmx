@@ -153,5 +153,6 @@
   <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3726" y="10">
    <polygon points="0,0 234,235 233,0"/>
   </object>
+  <object name="portal" type="objects.Portal" x="89" y="58" width="126" height="126"/>
  </objectgroup>
 </map>
