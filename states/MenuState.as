@@ -8,6 +8,8 @@
 	
 	// Object Imports
 	import objects.Jibbly;
+	import objects.PlayText;
+	import objects.ExitText;
 	
 	// Starling Imports
 	import starling.events.Event;
@@ -17,6 +19,7 @@
 	import citrus.utils.objectmakers.ObjectMaker2D;   
 	import citrus.core.CitrusEngine;
 	import citrus.input.controllers.Keyboard;
+	import citrus.view.starlingview.StarlingArt;
 
 	public class MenuState extends BaseState {
 
@@ -29,6 +32,9 @@
 
 		override public function initialize():void {
     		super.initialize();
+			
+			// Make animations loop
+			StarlingArt.setLoopAnimations(["idle", "jump", "walk", "fall"]);
 			
 			// Add physics (box2D) to the game
 			var box2D:Box2D = new Box2D("box2D");
@@ -43,6 +49,10 @@
 			var jibbly:Jibbly = getObjectByName("jibbly") as Jibbly;
 			view.camera.setUp(jibbly, new Rectangle(0, 0, map.@width * map.@tilewidth, map.@height * map.@tileheight));
 			
+			// Add texts for portals
+			var playText:PlayText = getObjectByName("playText") as PlayText;
+			var exitText:ExitText = getObjectByName("exitText") as ExitText;
+
 			// Play Instruction Theme
 			themeChannel = Assets.menuSound.play(0, 0, new SoundTransform(0.25));
 			
@@ -50,8 +60,6 @@
 			ce = CitrusEngine.getInstance();
 			var kb:Keyboard = ce.input.keyboard;
 			 
-			// Add continue action
-			kb.addKeyAction("space", Keyboard.SPACE);
 
 		}
 		

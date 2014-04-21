@@ -8,9 +8,12 @@
 	
 	// Object Imports
 	import objects.Jibbly;
+	import objects.FloatingText;
 	
 	// Starling Imports
 	import starling.events.Event;
+	import starling.text.TextField;
+	import starling.utils.Color;
 	
 	// Citrus Imports
 	import citrus.physics.box2d.Box2D;
@@ -18,6 +21,7 @@
 	import citrus.core.CitrusEngine;
 	import citrus.input.controllers.Keyboard;
 	import citrus.view.starlingview.StarlingArt;
+
 	
 	public class InstructionState extends BaseState {
 
@@ -46,6 +50,14 @@
 			// Set jibbly as center focus
 			var jibbly:Jibbly = getObjectByName("jibbly") as Jibbly;
 			view.camera.setUp(jibbly, new Rectangle(0, 0, map.@width * map.@tilewidth, map.@height * map.@tileheight));
+ 
+ 			// Add instruction texts
+			/*
+			var moveText:FloatingText = new FloatingText(30, 30, "Use");
+			addChild(moveText);
+			var tf:TextField = new TextField(100, 20, "Hello", "Verdana", 12, Color.WHITE);
+			addChild(tf);
+			*/
 			
 			// Play Instruction Theme
 			themeChannel = Assets.menuSound.play(0, 0, new SoundTransform(0.25));

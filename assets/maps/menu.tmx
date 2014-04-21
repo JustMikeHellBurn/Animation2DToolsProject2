@@ -3,6 +3,10 @@
  <tileset firstgid="1" name="tileset" tilewidth="63" tileheight="63">
   <image source="../gfx/tileset.png" width="1134" height="315"/>
  </tileset>
+ <objectgroup name="textlayer" width="15" height="15">
+  <object name="playText" type="objects.PlayText" x="407" y="583" width="69" height="32"/>
+  <object name="exitText" type="objects.ExitText" x="719" y="584" width="69" height="32"/>
+ </objectgroup>
  <layer name="Tile Layer 1" width="15" height="15">
   <data encoding="base64" compression="zlib">
    eJydkckOwjAMRNNvAJoDpaUnaNjhztL//ygm0oxkWeFADk+ul7GnSgohHMAO7MEE1mAFWhCZ53rirOIRnMACLKnpzHfL3O6S5gwuhdm8q2Hs3G5ptCOyL21j9N6Hv2s9lbTqle76/y15jj/uWk8b58Pn0ti3Scwn58O/od5ooLd/2ZIabb45Vmqzrq/U9mSg99H1vC8/q6j6ldzAHTxMzWtf4A0+YAZPYuuqaUbxCxGtFmc=

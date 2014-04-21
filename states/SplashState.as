@@ -35,7 +35,8 @@
 			// Stop Splash Theme
 			themeChannel.stop();
 			// Go to instructions state
-			CitrusEngine.getInstance().state = new InstructionState();
+			//CitrusEngine.getInstance().state = new InstructionState();
+			CitrusEngine.getInstance().state = new MenuState();
 		}
 		
 		private function splashDelay():void {

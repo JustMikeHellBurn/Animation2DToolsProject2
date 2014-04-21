@@ -143,4 +143,8 @@
 	<SubTexture name="marseye08" x="245" y="69" width="35" height="30"/>
 	<SubTexture name="marseye09" x="280" y="70" width="35" height="30"/>
 	<SubTexture name="marseye10" x="315" y="70" width="35" height="30"/>
+	
+	<SubTexture name="playtext" x="1092" y="275" width="72" height="20"/>
+	<SubTexture name="exittext" x="1091" y="299" width="66" height="20"/>
+	
 </TextureAtlas>

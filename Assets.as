@@ -19,6 +19,15 @@
 		[Embed(source="assets/gfx/atlas.xml", mimeType="application/octet-stream")]
 		private static var atlasXML:Class;
 
+		// Fonts
+		[Embed(source="assets/fonts/jibblyFont.png")]
+		private static var jibblyFont:Class;
+		
+		[Embed(source="assets/fonts/jibblyFont.fnt", mimeType="application/octet-stream")]
+		private static var jibblyFontXML:Class;
+		
+		
+		// Music Themes and Sounds
 		[Embed(source="assets/sfx/theme.mp3")]
 		public static var playTheme:Class;
 		public static var playSound:Sound;
@@ -44,7 +53,7 @@
 		
 		public static var jibblyAtlas:TextureAtlas;
 		
-	
+		// Tile Set Graphics
         [Embed(source="assets/gfx/tileset.png")]    
         public static var TILESET:Class;  
 		
@@ -79,6 +88,10 @@
 			playSound = new playTheme();
 			playSound.play(0,0, new SoundTransform(0));
 			
+			// Load Fonts
+			TextField.registerBitmapFont(new BitmapFont(Texture.fromBitmap(new jibblyFont()),
+				XML(new jibblyFontXML())));
+				
 		}
 		
 	}
