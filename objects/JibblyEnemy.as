@@ -6,6 +6,7 @@
 	import citrus.physics.box2d.Box2DUtils;
 	import citrus.core.CitrusEngine;
 	import states.PlayState;
+	import objects.Bullet;
 	
 	public class JibblyEnemy extends Enemy {
 
@@ -21,6 +22,13 @@
 			if (collider is Hero && _hurt) {
 				Assets.enemyHurtSound.play();
 				(CitrusEngine.getInstance().state as PlayState).scoreCounter += 10;
+			}
+			
+			if (collider is Bullet) {
+				Assets.enemyHurtSound.play();
+				(CitrusEngine.getInstance().state as PlayState).scoreCounter += 10;
+				(CitrusEngine.getInstance().state).remove(collider as Bullet);
+				kill = true;
 			}
 		}
 		

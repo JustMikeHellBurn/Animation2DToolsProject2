@@ -69,34 +69,11 @@
 	<SubTexture name="hurt11" x="481" y="200" width="49" height="43"/>
 	<SubTexture name="hurt12" x="530" y="200" width="49" height="42"/>
 	
-	<SubTexture name="shoot01" x="0" y="350" width="49" height="43"/>
-	<SubTexture name="shoot02" x="49" y="350" width="49" height="43"/>
-	<SubTexture name="shoot03" x="98" y="350" width="47" height="43"/>
-	<SubTexture name="shoot04" x="145" y="350" width="47" height="43"/>
-	<SubTexture name="shoot05" x="192" y="350" width="47" height="43"/>
-	<SubTexture name="shoot06" x="238" y="350" width="46" height="43"/>
-	<SubTexture name="shoot07" x="284" y="350" width="45" height="43"/>
-	<SubTexture name="shoot08" x="329" y="350" width="44" height="43"/>
-	<SubTexture name="shoot09" x="373" y="350" width="45" height="43"/>
-	<SubTexture name="shoot10" x="418" y="350" width="46" height="43"/>
-	<SubTexture name="shoot11" x="464" y="350" width="46" height="43"/>
-	<SubTexture name="shoot12" x="510" y="350" width="53" height="43"/>
-	<SubTexture name="shoot13" x="563" y="350" width="45" height="43"/>
-	<SubTexture name="shoot14" x="608" y="350" width="44" height="43"/>
-	<SubTexture name="shoot15" x="652" y="350" width="45" height="43"/>
-	<SubTexture name="shoot16" x="697" y="350" width="45" height="43"/>
-	<SubTexture name="shoot17" x="697" y="350" width="46" height="43"/>
-	<SubTexture name="shoot18" x="0" y="400" width="53" height="43"/>
-	<SubTexture name="shoot19" x="53" y="400" width="54" height="39"/>
-	<SubTexture name="shoot20" x="107" y="400" width="54" height="38"/>
-	<SubTexture name="shoot21" x="161" y="400" width="69" height="38"/>
-	<SubTexture name="shoot22" x="230" y="400" width="70" height="37"/>
-	<SubTexture name="shoot23" x="300" y="400" width="75" height="36"/>
-	<SubTexture name="shoot24" x="375" y="400" width="78" height="35"/>
-	<SubTexture name="shoot25" x="453" y="400" width="52" height="36"/>
-	<SubTexture name="shoot26" x="505" y="400" width="53" height="37"/>
-	<SubTexture name="shoot27" x="558" y="400" width="54" height="38"/>
-	<SubTexture name="shoot28" x="612" y="400" width="53" height="42"/>
+
+	<SubTexture name="shoot1" x="453" y="400" width="52" height="36"/>
+	<SubTexture name="shoot2" x="505" y="400" width="53" height="37"/>
+	<SubTexture name="shoot3" x="558" y="400" width="54" height="38"/>
+	<SubTexture name="shoot4" x="612" y="400" width="53" height="42"/>
 	
 	
 	<SubTexture name="telein01" x="0" y="450" width="58" height="63"/>

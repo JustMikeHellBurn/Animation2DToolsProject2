@@ -71,7 +71,7 @@
 			// Shoot Bullet
 			if (ce.input.justDid("shoot")) {
 				isShooting = true;
-				CitrusEngine.getInstance().state.add(new Bullet("bullet", {x:this.x, y:this.y, speed:4, angle:90}));
+				CitrusEngine.getInstance().state.add(new Bullet("bullet", {x:this.x + (_inverted ? this.width : -this.width), y:this.y, speed: _inverted ? 4 : -4}));
 				Assets.shootSound.play(0, 0, new SoundTransform(0.5));
 			} 
 
