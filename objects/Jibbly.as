@@ -7,7 +7,8 @@
 	import states.PlayState;
 	import states.BaseState;
 	import flash.media.SoundTransform;
-	
+	import starling.core.Starling;
+	import states.SplashState;
 	
 	public class Jibbly extends Hero {
 		
@@ -106,7 +107,7 @@
 			if (exitPortal != null && x + width > exitPortal.x && y + height > exitPortal.y && x < exitPortal.x + exitPortal.width && y < exitPortal.y + exitPortal.height && ce.input.justDid("tele")) {
 				isTelporting = true;
 				_controlsEnabled = false;
-				(CitrusEngine.getInstance().state as BaseState).nextState = null;
+				(CitrusEngine.getInstance().state as BaseState).nextState = new SplashState();
 				Assets.teleportSound.play(0, 0, new SoundTransform(0.5));
 			}
 			

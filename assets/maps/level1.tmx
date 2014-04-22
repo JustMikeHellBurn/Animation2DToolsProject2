@@ -133,7 +133,7 @@
     <property name="endX" value="1200"/>
     <property name="endY" value="220"/>
     <property name="speed" value="4"/>
-    <property name="startX" value="2200"/>
+    <property name="startX" value="1950"/>
    </properties>
   </object>
   <object name="coin" type="objects.JibblyCoin" x="584" y="706" width="32" height="32"/>
