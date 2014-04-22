@@ -1,4 +1,20 @@
-﻿package states {
+﻿/*
+ * Author Names: 
+ *		Justin Hellsten 	(http://justinhellsten.com/)
+ *		Michael Burnie 		(http://michaelburnie.com/)
+ *
+ * Source File Name: InstructionState.as
+ * Last Modified by: Justin Hellsten
+ * Date Last Modified: April 21st, 2014
+ *
+ * Program Description: 
+ *
+ *		Instruction state, which shows the splash image for 5 seconds, then continues into the instruction state.
+ *		
+ * Revision	History: See Github: https://github.com/JustMikeHellBurn/Animation2DToolsProject2
+ *				
+ */
+package states {
 	
 	// Flash Imports
 	import flash.media.SoundChannel;
@@ -23,7 +39,12 @@
 	import citrus.input.controllers.Keyboard;
 	import citrus.view.starlingview.StarlingArt;
 
-	
+	/*
+	 * InstructionState -> BaseState
+	 *     
+	 *		Instruction state shows the instructions, and executes a tiled map where the user can contro Jibbly. 
+	 *		The only way to exit this state is by going through the portal.
+	 */
 	public class InstructionState extends BaseState {
 
 		private var themeChannel:SoundChannel;

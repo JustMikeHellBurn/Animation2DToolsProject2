@@ -1,19 +1,42 @@
-﻿package  {
+﻿/*
+ * Author Names: 
+ *		Justin Hellsten 	(http://justinhellsten.com/)
+ *		Michael Burnie 		(http://michaelburnie.com/)
+ *
+ * Source File Name: Assets.as
+ * Last Modified by: Justin Hellsten
+ * Date Last Modified: April 21st, 2014
+ *
+ * Program Description: 
+ *
+ *		Contains all game assets, graphics, sounds effects and music, fonts, etc. All interaction with assets
+ *		are through Assets.as
+ *		
+ * Revision	History: See Github: https://github.com/JustMikeHellBurn/Animation2DToolsProject2
+ *				
+ */
+package  {
 	
+	// Import starling textures, and bitmaps
 	import starling.text.BitmapFont;
 	import starling.text.TextField;
 	import starling.textures.Texture;
 	import starling.textures.TextureAtlas;
+	
+	// Import flash sound objects to create sfx, and music sound channels.
 	import flash.media.Sound;
 	import flash.media.SoundTransform;
-	import objects.Jibbly;
 	
+	/*
+	 * Assets
+	 *     
+	 *		Container for all embedded game assets.
+	 */
 	public class Assets {
 
-		// Embed the MailPilot Texture Atlas
+		// Embed the Jibbly the outcast Texture Atlas
 		[Embed(source="assets/gfx/atlas.png")]
 		private static var atlasBitmap:Class;
-		
 		public static var mpAtlas:TextureAtlas;
 		
 		[Embed(source="assets/gfx/atlas.xml", mimeType="application/octet-stream")]
@@ -25,7 +48,6 @@
 		
 		[Embed(source="assets/fonts/jibblyFont.fnt", mimeType="application/octet-stream")]
 		private static var jibblyFontXML:Class;
-		
 		
 		// Music Themes and Sounds
 		[Embed(source="assets/sfx/theme.mp3")]
@@ -94,8 +116,11 @@
         [Embed(source="assets/maps/end.tmx", mimeType="application/octet-stream")]    
         public static var END_MAP:Class;     
 		
+		// init() - Initialize static assets.
+		//
 		public static function init():void {
 
+			// Grab texture atlas
 			mpAtlas = new TextureAtlas(Texture.fromBitmap(new atlasBitmap()), XML(new atlasXML()));
 			jibblyAtlas = new TextureAtlas(Texture.fromBitmap(new jibblyBitmap()), XML(new jibblyXML()));
 			
