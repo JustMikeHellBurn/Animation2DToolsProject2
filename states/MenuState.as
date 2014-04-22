@@ -1,4 +1,20 @@
-﻿package states {
+﻿/*
+ * Author Names: 
+ *		Justin Hellsten 	(http://justinhellsten.com/)
+ *		Michael Burnie 		(http://michaelburnie.com/)
+ *
+ * Source File Name: MenuState.as
+ * Last Modified by: Justin Hellsten
+ * Date Last Modified: April 21st, 2014
+ *
+ * Program Description: 
+ *
+ *		Menu state. This state contains two portals, one that goes into the play state, the other which exits the game.
+ *		
+ * Revision	History: See Github: https://github.com/JustMikeHellBurn/Animation2DToolsProject2
+ *				
+ */
+package states {
 	
 	// Flash Imports
 	import flash.media.SoundChannel;
@@ -23,15 +39,29 @@
 	import citrus.input.controllers.Keyboard;
 	import citrus.view.starlingview.StarlingArt;
 
+	/*
+	 * MenuState -> BaseState
+	 *     
+	 *		Menu state shows two portals, play and exit. If you go through the play portal you'll
+	 *		get redirected to the play state, otherwise you'll be redirected to the splash state
+	 *		if you choose to exit.
+	 */
 	public class MenuState extends BaseState {
 
+		// Menu theme 
 		private var themeChannel:SoundChannel;
+		
+		// Reference to Citrus Engine, needed for keyboard input, and object references.
 		private var ce:CitrusEngine;
 		
+		// MenuState() - Constructor for the class.
+		//
 		public function MenuState() {
 			super();
 		}
 
+		// initialize() - Initialize the menu state, things like the map, map objects, instruction text, portals, etc.
+		//
 		override public function initialize():void {
     		super.initialize();
 			
@@ -69,12 +99,16 @@
 
 		}
 		
+		// destroy() - Destroys the menu state, and stops the music theme.
+		//
 		override public function destroy():void {
 			super.destroy();
-			// Stop Theme
 			themeChannel.stop();
 		}
 		
+		// update() - Updates the menu state. Really all thats need is to make sure jibbly has > 0 lives, otherwise
+		//			  After three deaths the player will be redirected to the play state.
+		//
 		override public function update(timeDelta:Number):void {
 			super.update(timeDelta);
 			// Jibbly can't die here, give him > 0 lives

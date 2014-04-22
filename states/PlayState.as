@@ -1,4 +1,20 @@
-﻿package states {
+﻿/*
+ * Author Names: 
+ *		Justin Hellsten 	(http://justinhellsten.com/)
+ *		Michael Burnie 		(http://michaelburnie.com/)
+ *
+ * Source File Name: PlayState.as
+ * Last Modified by: Justin Hellsten
+ * Date Last Modified: April 21st, 2014
+ *
+ * Program Description: 
+ *
+ *		Play state. This state is actually Level 1, and is where the action happens.
+ *		
+ * Revision	History: See Github: https://github.com/JustMikeHellBurn/Animation2DToolsProject2
+ *				
+ */
+package states {
 	
 	// Flash Imports
 	import flash.media.SoundChannel;
@@ -29,20 +45,36 @@
 	import objects.JibblyEnemy;
 	import objects.JibblyMovingPlatform;
 	
+	/*
+	 * PlayState -> BaseState
+	 *     
+	 *		Play State has one portal, which will lead to the end state. The player can control
+	 *		jibbly, and must go through the obstacles and enemies to reach the exits. The player
+	 *		can also pick up coins along the way for points. You have three lives, which if you run out
+	 *		you will be sent to the end state with your final score.
+	 */
 	public class PlayState extends BaseState {
 
+		// Play theme 
 		private var themeChannel:SoundChannel;
+		
+		// Reference to Citrus Engine, needed for keyboard input, and object references.
 		private var ce:CitrusEngine;
 		
+		// Text Fields (score, health, and lives counters)
 		public var score:TextField;
 		public var health:TextField;
 		public var lives:TextField;
 		public var scoreCounter:int;
 		
+		// PlayState() - Constructor for the class.
+		//
 		public function PlayState() {
 			super();
 		}
 
+		// initialize() - Initialize the play state, things like the map, map objects, instruction text, portals, etc.
+		//
 		override public function initialize():void {
     		super.initialize();
 			scoreCounter = 0;
@@ -66,6 +98,8 @@
 			var coin:JibblyCoin = getObjectByName("coin") as JibblyCoin;
 			var enemy:JibblyEnemy = getObjectByName("coin") as JibblyEnemy;
 	
+			// Set up lives, health, and score text fields
+			// ===========================================
 			lives = new TextField(300, 64, "Lives: 3");
 			lives.x = 500;
 			lives.y = 10;
@@ -104,19 +138,21 @@
 			this.nextState = new EndState();
 		}
 	
+		// destroy() - Destroys the play state, and stops the music theme.
+		//
 		override public function destroy():void {
+			// Pass on the score to the end state
 			(this.nextState as EndState).scoreCounter = scoreCounter;
 			super.destroy();
-			// Stop Theme
 			themeChannel.stop();
 		}
 
+		// update() - Updates the play state. This updates the score, health, and life counters.
+		//
 		override public function update(timeDelta:Number):void {
 			super.update(timeDelta);
-	
-			// Detect collisions between objects
+
 			var jibbly:Jibbly = getObjectByName("jibbly") as Jibbly;
-			var enemy:Enemy = getObjectByName("enemy") as Enemy;
 			
 			score.text =  "Score: " + scoreCounter;
 			health.text = "Health: " + jibbly.health;

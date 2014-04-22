@@ -1,4 +1,20 @@
-﻿package objects {
+﻿/*
+ * Author Names: 
+ *  Justin Hellsten  (http://justinhellsten.com/)
+ *  Michael Burnie   (http://michaelburnie.com/)
+ *
+ * Source File Name: Jibbly.as
+ * Last Modified by: Justin Hellsten
+ * Date Last Modified: April 21st, 2014
+ *
+ * Program Description: 
+ *
+ *  Handles the main character, Jibbly. 
+ *  
+ * Revision History: See Github: https://github.com/JustMikeHellBurn/Animation2DToolsProject2
+ *    
+ */
+ package objects {
 	import citrus.objects.platformer.box2d.Hero;
 	import citrus.view.starlingview.AnimationSequence;
 	import citrus.core.CitrusEngine;
@@ -12,6 +28,7 @@
 	
 	public class Jibbly extends Hero {
 		
+		//create the primary variables
 		public var health:Number;
 		public var lives:int;
 		private var ce:CitrusEngine;
@@ -92,7 +109,7 @@
 			var playPortal:PlayPortal = CitrusEngine.getInstance().state.getObjectByName("playPortal") as PlayPortal;
 			var exitPortal:ExitPortal = CitrusEngine.getInstance().state.getObjectByName("exitPortal") as ExitPortal;
 			
-			// Not efficient, but I'm really bloody tired right now...so I don't care.
+			// Check if Jibbly can teleport
 			if (portal != null && x + width > portal.x && y + height > portal.y && x < portal.x + portal.width && y < portal.y + portal.height && ce.input.justDid("tele")) {
 				isTelporting = true;
 				_controlsEnabled = false;
@@ -117,8 +134,9 @@
 			
 		}
 		
+		
 		public function reset():void {
-			// Game over!
+			// Reset Jibbly to the start of the level
 			x = startX;
 			y = startY;
 			health = 3;
@@ -129,6 +147,7 @@
 		
 		protected function onAnimationOver(name:String):void
 		{
+			//check animations, when over do the following
 			if (name == "hurt") {
 				health -= 1;
 				gotHit = false;

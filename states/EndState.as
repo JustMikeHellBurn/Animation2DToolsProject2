@@ -1,4 +1,21 @@
-﻿package states {
+﻿/*
+ * Author Names: 
+ *		Justin Hellsten 	(http://justinhellsten.com/)
+ *		Michael Burnie 		(http://michaelburnie.com/)
+ *
+ * Source File Name: EndState.as
+ * Last Modified by: Justin Hellsten
+ * Date Last Modified: April 21st, 2014
+ *
+ * Program Description: 
+ *
+ *		End state. This last state, which is shown when the user dies or beats the game. When Enter is press the 
+ *		Player is redirected to the menu state.
+ *		
+ * Revision	History: See Github: https://github.com/JustMikeHellBurn/Animation2DToolsProject2
+ *				
+ */
+package states {
 	
 	// Flash Imports
 	import flash.media.SoundChannel;
@@ -8,7 +25,6 @@
 	
 	// Object Imports
 	import objects.Jibbly;
-	import objects.FloatingText;
 	import objects.Portal;
 	
 	// Starling Imports
@@ -23,17 +39,30 @@
 	import citrus.input.controllers.Keyboard;
 	import citrus.view.starlingview.StarlingArt;
 
-	
+	/*
+	 * EndState -> BaseState
+	 *     
+	 *		End state shows the final score, that is all...
+	 */
 	public class EndState extends BaseState {
 
+		// End theme 
 		private var themeChannel:SoundChannel;
+		
+		// Reference to Citrus Engine, needed for keyboard input, and object references.
 		private var ce:CitrusEngine;
+		
+		// Final score
 		public var scoreCounter:int;
 		
+		// EndState() - Constructor for the class.
+		//
 		public function EndState() {
 			super();
 		}
 
+		// initialize() - Initialize the play state, things like the map, map objects, instruction text, portals, etc.
+		//
 		override public function initialize():void {
     		super.initialize();
 			
@@ -73,15 +102,7 @@
 			
  			// Add Portals
 			var portal:Portal = getObjectByName("portal") as Portal;
-			
- 			// Add instruction texts
-			/*
-			var moveText:FloatingText = new FloatingText(30, 30, "Use");
-			addChild(moveText);
-			var tf:TextField = new TextField(100, 20, "Hello", "Verdana", 12, Color.WHITE);
-			addChild(tf);
-			*/
-			
+
 			// Play Instruction Theme
 			themeChannel = Assets.menuSound.play(0, int.MAX_VALUE, new SoundTransform(0.25));
 			
@@ -95,12 +116,15 @@
 			this.nextState = new MenuState();
 		}
 		
+		// destroy() - Destroys the end state, and stops the music theme.
+		//
 		override public function destroy():void {
 			super.destroy();
-			// Stop Theme
 			themeChannel.stop();
 		}
 		
+		// update() - Updates the emd state. If enter is press destroy the state.
+		//
 		override public function update(timeDelta:Number):void {
 			super.update(timeDelta);
 	

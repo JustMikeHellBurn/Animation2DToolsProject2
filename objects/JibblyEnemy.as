@@ -1,4 +1,20 @@
-﻿package objects {
+﻿/*
+ * Author Names: 
+ *  Justin Hellsten  (http://justinhellsten.com/)
+ *  Michael Burnie   (http://michaelburnie.com/)
+ *
+ * Source File Name: JibblyEnemy.as
+ * Last Modified by: Justin Hellsten
+ * Date Last Modified: April 21st, 2014
+ *
+ * Program Description: 
+ *
+ *  Handles the enemy objects in the play state.
+ *  
+ * Revision History: See Github: https://github.com/JustMikeHellBurn/Animation2DToolsProject2
+ *    
+ */
+ package objects {
 	import citrus.objects.platformer.box2d.Enemy;
 	import citrus.objects.platformer.box2d.Hero;
 	import Box2D.Dynamics.Contacts.b2Contact;
@@ -15,6 +31,7 @@
 			view = Assets.mpAtlas.getTexture("enemy");
 		}
 
+		//if the player kills an enemy by jumping on its head or through shooting it, kill the enemy and add to the player's score.
 		override public function handleBeginContact(contact:b2Contact):void
 		{
 			super.handleBeginContact(contact);

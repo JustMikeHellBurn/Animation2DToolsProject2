@@ -24,7 +24,6 @@ package states {
 	
 	// Object Imports
 	import objects.Jibbly;
-	import objects.FloatingText;
 	import objects.Portal;
 	
 	// Starling Imports
@@ -47,13 +46,20 @@ package states {
 	 */
 	public class InstructionState extends BaseState {
 
+		// Instruction's theme
 		private var themeChannel:SoundChannel;
+		
+		// Reference to Citrus Engine, needed for keyboard input, and object references.
 		private var ce:CitrusEngine;
 		
+		// InstructionState() - Constructor for the class.
+		//
 		public function InstructionState() {
 			super();
 		}
 
+		// initialize() - Initialize the instruction state, things like the map, map objects, instruction text, etc.
+		//
 		override public function initialize():void {
     		super.initialize();
 			
@@ -81,39 +87,21 @@ package states {
 			instructionText.fontSize = 32;
 			instructionText.color = Color.WHITE;
 			addChild(instructionText);
- 			// Add Portals
-			var portal:Portal = getObjectByName("portal") as Portal;
 			
- 			// Add instruction texts
-			/*
-			var moveText:FloatingText = new FloatingText(30, 30, "Use");
-			addChild(moveText);
-			var tf:TextField = new TextField(100, 20, "Hello", "Verdana", 12, Color.WHITE);
-			addChild(tf);
-			*/
+ 			// Add Portal
+			var portal:Portal = getObjectByName("portal") as Portal;
 			
 			// Play Instruction Theme
 			themeChannel = Assets.instructionSound.play(0, int.MAX_VALUE, new SoundTransform(0.25));
 			
-			// get the keyboard
-			ce = CitrusEngine.getInstance();
-			var kb:Keyboard = ce.input.keyboard;
-			 
-			// Add continue action
-			//kb.addKeyAction("space", Keyboard.SPACE);
-
 			this.nextState = new MenuState();
 		}
 		
+		// destroy() - Destroys the instruction state, and stops the music theme.
+		//
 		override public function destroy():void {
 			super.destroy();
-			// Stop Theme
 			themeChannel.stop();
-		}
-		
-		override public function update(timeDelta:Number):void {
-			super.update(timeDelta);
-	
 		}
 		
 	}
