@@ -58,7 +58,7 @@
 			instructionText.y = 25;
 			instructionText.fontName = "jibblyFont";
 			instructionText.fontSize = 32;
-			instructionText.color = Color.WHITE;
+			instructionText.color = Color.BLACK;
 			addChild(instructionText);
  			// Add Portals
 			var portal:Portal = getObjectByName("portal") as Portal;

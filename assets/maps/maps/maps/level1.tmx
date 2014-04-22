@@ -10,7 +10,7 @@
  </tileset>
  <layer name="Background" width="64" height="15">
   <data encoding="base64" compression="zlib">
-   eJztzjEBAAAMAiDXv/RieAgJSAAAYMe1A0DNAxMAAAI=
+   eJx91lGOwyAQA1D2fEDuf5xtpVZyX0w+UBIShvGMbTLHGPs1rteYcX2PFeP7vOO7/Rl+M+Ndrrtibh7ifOfW53rFu02sWeLm2j1+83B9xpjsuZjPvXz23vzXuOef+VgXsSfGNX5x7dGxJq7MIfu6H+YSS8vbuq3xi8X8Ww9a/mvcc0+uyM9JvPzG2ovX+Ke+ZM/tUePkLLHNdxE3a5g4kktz3Hsjr/w24+WzNTCW+4lf3esZ7qEnqA355rvWO3vUvKbpSz6d6i3ncyzGSUv2WL5ljte410mNNbyJVfx6SGLTqxODnFRrciKxmfOpDxdzLVdrpiedNCH37Kc1S72qaWurR/neGOpGz5rMzcO8/tZ09KRP6+KZKyf1TuvbfF1/lovyTd22M/W0t17Z6mlsOaDWxa8W9IymsZaf55c88r+labl5QvNWPdn+yhd12zzM2lm3J+/LHhu/9d7zrGmunQHyapWre/3FfKt/8q/5ud/Ik8abrHnTUTuP9Vd9VM2d1jQfO/2zeS7J20kMeyZmOWouT/ywpvY74zedqZWmiYu1p3qkrhp+/UUdmas6bJ7ks/098d0cEq/8e/r/0IOaPp9413qiL1zMZc/0LO+b15z6lhj+AU6xHmc=
   </data>
  </layer>
  <layer name="Platform" width="64" height="15">
@@ -20,13 +20,18 @@
  </layer>
  <layer name="Foreground" width="64" height="15">
   <data encoding="base64" compression="zlib">
-   eJydl91S20AMhXUR4AEc23fUnUnHIWmhtL1mmpr3f6auBp3hi9glBs2ccVbSavfox4bZzLaBrmDA7zGth9B1ePbxewy/PiDbNvYN8FHcDuhh7xBnRJw+3adLtsyDOl8fAncF+4K54LnCnXwU28JuiCf9iKfuZcmuuxjsPItxyM/SU5ypVy6Hin8PvcdfCr4X/IgcHOy8HqyL7q29ea2ze+jFUefyjrW70r+VC/WT/JiLIekVg+dR73vuCx7spfaOI57qCz3nCm/2Je/F+eih5zwwT9Kzx1gDnWPwk539zFzvAzqLc8M4S8D5sR8WO5+T3Nsz7i9+RzuvF/NRq494WDqnw34+OTutWeuSf9ZztuWn+qsf7uI+c+SBOWcs1b42b+qB7K/z812HtCYH9q707K3WjDDnx+DFGqk3VOcl7P7c22s9dJ7y1qU1z+Vadtn0jmBMvm8Fzd8W/sfAwd7OxQCM6WzWiHbWSHHZ80vi0SEe65VjDbCRn+zfAvnO+RvIeGPDRp45j/zN72+PWJo55ZbvwfeEPXlJ+K5z2RTcrNy7Nv4W6y+B24IJ6yz8XqneemdeEtVwjWRf5369cu8aUY0pU8FXIIvr2L+a+zXcXT5Sw03gM3vXyGQvtc7iHGt1l7/PjL7vz/Y+94/UMPu6X+a/sbfie3a2vq9cnIfznAKXhLPBv8cvzXythi3+2fcmra+tXn/XXTVsNXEek71yEq+WaBYmO+fvfaD/A34GVMMdfgtu/13wB/7CrrL3MSCfvKb+V8NWg/jcBpgPctUc5HzxOyH+TwHV8Aq/VUe3nwr+wV9wf9VXe0+BJ+w9Vfa67m/DVgM5Eq18Tdjj/PlN9P7/D+mdTAM=
+   eJydl9tO20AQhuciwAM4Xt9RV0rlkEDP16ipef9n6o6YX3yZrInpSL+c3Tns/nOwYTKzbaCrKPg9pHWJvQ7PPn4PYdcHpNuGX4GN4nZAD32HOAPi9Ok+XdJlHtzz9SHwULGvmCpeko/FmQbfPtYF+wX7A566lyW97mLQKxf01z7j8CnO3FcuS8O+t3Nec8VjxVPk4JC4sS6Zw2CXnJUH7W/hp1it+KVhv5QL9RPvozuWtK8YPI/77vO14pu91t5xxFN9oefU4M2+5L04Hz32OQ/Mk/bZY+LEmTDYSc9+Zq73AZ3FuWGcOeD82A+znc9J7u0J9xe/o53Xi/lo1Uc8LJ3TwZ9Pzs7SrHXJPu/rvcF7qv7qh4e4zxR5YM4ZS7VvzZt6INvr/HzXktbk0HofsbeWZoQ5PwYv1ki9oTrPoffn3t7qofOUty6teS7X0kundwRj8lsjaP62sD8GDnY5FwUY0tmsEfWskeKy5+fEo0M81ivHKtCRn/RfAvnO+RvIeMOCjjxzHvmb398esTRzyi3fg+8Je/Ka8F3nsqm4W+m7Nv4W60+B+4oR6yz8XqneemdeE9VwjWRb53670neNqMaUseIzkMX32L+a+zXcXT5Sw03gf3zXyGivtc7iHFt1l73PjL7vL/Y+94/UMNu6Xea/sUtxn52t7ysX5+E8x8A14Wzw7/FrM9+q4RL/bHuX1rfWrr/v3SzoWuI8RnvjJF5LolkY7Zy/94H+D/geUA13+C24/lfFb9gLu4bvj4Bs8pr7Pxd0LYjPfYD5IFfNQc4XvxPi/xxQDW/wW3V0/aniL+wFt1d95XsKPMP31PD1vT8LuhbIkVjK1wgf589vovf/P0l+S5c=
   </data>
  </layer>
  <objectgroup name="citrus" width="64" height="15">
   <object name="jibbly" type="objects.Jibbly" x="259" y="546" width="48" height="42">
    <properties>
-    <property name="acceleration" value="4"/>
+    <property name="acceleration" value="2"/>
+    <property name="canDuck" value="false"/>
+    <property name="enemySpringHeight" value="6"/>
+    <property name="enemySpringJumpHeight" value="7"/>
+    <property name="hurtVelocityX" value="4"/>
+    <property name="hurtVelocityY" value="8"/>
     <property name="maxVelocity" value="4"/>
    </properties>
   </object>
@@ -118,19 +123,17 @@
   <object name="MovingPlatform" type="objects.JibblyMovingPlatform" x="2268" y="693" width="63" height="63">
    <properties>
     <property name="endX" value="2700"/>
-    <property name="endY" value="706"/>
+    <property name="endY" value="725"/>
     <property name="speed" value="2"/>
     <property name="startX" value="2350"/>
-    <property name="startY" value="706"/>
    </properties>
   </object>
   <object name="MovingPlatform" type="objects.JibblyMovingPlatform" x="1890" y="189" width="64" height="64">
    <properties>
     <property name="endX" value="1200"/>
-    <property name="endY" value="192"/>
+    <property name="endY" value="220"/>
     <property name="speed" value="4"/>
-    <property name="startX" value="2250"/>
-    <property name="startY" value="192"/>
+    <property name="startX" value="2200"/>
    </properties>
   </object>
   <object name="coin" type="objects.JibblyCoin" x="584" y="706" width="32" height="32"/>
@@ -150,9 +153,6 @@
   <object name="coin" type="objects.JibblyCoin" x="3788" y="148" width="32" height="32"/>
   <object name="coin" type="objects.JibblyCoin" x="2540" y="579" width="32" height="32"/>
   <object name="coin" type="objects.JibblyCoin" x="2151" y="453" width="32" height="32"/>
-  <object name="platform" type="citrus.objects.platformer.box2d.Platform" x="3726" y="10">
-   <polygon points="0,0 234,235 233,0"/>
-  </object>
   <object name="portal" type="objects.Portal" x="89" y="58" width="126" height="126"/>
  </objectgroup>
 </map>

@@ -3,14 +3,14 @@
 <!-- $TexturePacker:SmartUpdate:7f923d0a66bc5825886d7924ee8910f2:0fa03eb6fec952a047be5ccb3bab7c65:cde709370900f12288f3449eded86f07$ -->
 <TextureAtlas imagePath="atlas.png">
 
-	<SubTexture name="splashimage" x="1091" y="0" width="750" height="270"/>
+	<SubTexture name="splashimage" x="1207" y="1" width="568" height="372"/>
     <SubTexture name="bullet" x="0" y="200" width="12" height="12"/>
 	<SubTexture name="enemy" x="0" y="120" width="63" height="63"/>
 	<SubTexture name="movingplatform" x="0" y="56" width="63" height="63"/>
 	<SubTexture name="coin" x="0" y="0" width="40" height="40"/>
 	
-	<SubTexture name="playtext" x="1092" y="275" width="72" height="20"/>
-	<SubTexture name="exittext" x="1091" y="299" width="66" height="20"/>
+	<SubTexture name="playtext" x="1011" y="5" width="73" height="19"/>
+	<SubTexture name="exittext" x="1010" y="29" width="65" height="19"/>
 	
 	<SubTexture name="portal1" x="12" y="241" width="123" height="123"/>
 	<SubTexture name="portal2" x="205" y="241" width="123" height="123"/>
