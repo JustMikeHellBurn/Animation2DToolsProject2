@@ -54,17 +54,17 @@
 			view.camera.setUp(jibbly, new Rectangle(0, 0, map.@width * map.@tilewidth, map.@height * map.@tileheight));
  
  			// Add instruction text
-			var scoreText:TextField = new TextField(250, 32, "Score: " + scoreCounter);
+			var scoreText:TextField = new TextField(250, 64, "Score: " + scoreCounter);
 			scoreText.x = 260;
 			scoreText.y = 250;
-			scoreText.fontName = "jibblyFont";
+			scoreText.fontName = "JibblyFont";
 			scoreText.fontSize = 32;
 			scoreText.color = Color.WHITE;
 			
-			var gameOverText:TextField = new TextField(500, 32, "Game Over! Press Enter to Continue!");
+			var gameOverText:TextField = new TextField(500, 64, "Game Over! Press Enter to Continue!");
 			gameOverText.x = 150;
 			gameOverText.y = 150;
-			gameOverText.fontName = "jibblyFont";
+			gameOverText.fontName = "JibblyFont";
 			gameOverText.fontSize = 32;
 			gameOverText.color = Color.WHITE;
 			

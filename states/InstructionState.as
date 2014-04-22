@@ -56,9 +56,9 @@
 			var instructionText:TextField = new TextField(750, 100, "Use arrow keys to move. Z to shoot, T to go through\n portals, Space to Jump. Good Luck Jibbly!");
 			instructionText.x = 25;
 			instructionText.y = 25;
-			instructionText.fontName = "jibblyFont";
+			instructionText.fontName = "JibblyFont";
 			instructionText.fontSize = 32;
-			instructionText.color = Color.BLACK;
+			instructionText.color = Color.WHITE;
 			addChild(instructionText);
  			// Add Portals
 			var portal:Portal = getObjectByName("portal") as Portal;

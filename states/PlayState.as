@@ -65,32 +65,30 @@
 			var movingPlatforms:JibblyMovingPlatform = getObjectByName("movingPlatform") as JibblyMovingPlatform;
 			var coin:JibblyCoin = getObjectByName("coin") as JibblyCoin;
 			var enemy:JibblyEnemy = getObjectByName("coin") as JibblyEnemy;
-			
-			// Put text fields 
-			score = new TextField(200, 32, "Score: 0");
-			health = new TextField(200, 32, "Health: 3");
-			lives = new TextField(200, 32, "Lives: 3");
-			
-			health.x = 10;
-			health.y = 10;
-			score.x = 550;
-			score.y = 10;
-			score.fontName = "jibblyFont";
-			score.fontSize = 32;
-			health.fontName = "jibblyFont";
-			health.fontSize = 32;
-			score.color = Color.WHITE;
-			health.color = Color.WHITE;
-			
-			lives.x = 250;
+	
+			lives = new TextField(300, 64, "Lives: 3");
+			lives.x = 500;
 			lives.y = 10;
-			lives.fontName = "jibblyFont";
+			lives.fontName = "JibblyFont";
 			lives.fontSize = 32;
 			lives.color = Color.WHITE;
-			
 			addChild(lives);
-			addChild(score);
+			
+			health = new TextField(300, 64, "Health: 3");
+			health.x = 0;
+			health.y = 10;
+			health.fontName = "JibblyFont";
+			health.fontSize = 32;
+			health.color = Color.WHITE;
 			addChild(health);
+			
+			score = new TextField(300, 64, "Score");
+			score.x = 250;
+			score.y = 10;
+			score.fontName = "JibblyFont";
+			score.fontSize = 32;
+			score.color = Color.WHITE;
+			addChild(score);
 			
 			// Set jibbly as center focus
 			var jibbly:Jibbly = getObjectByName("jibbly") as Jibbly;
